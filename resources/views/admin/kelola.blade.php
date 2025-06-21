@@ -39,16 +39,16 @@
               <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                 <div class="mb-4">
                   <label for="saldo"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Saldo</label>
-                  <input type="number" name="saldo" value="50000"
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Saldo Terkini</label>
+                  <input type="number" name="saldo" value="50000" disabled
                     class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
               <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                 <div class="mb-4">
                   <label for="first name"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Keterangan</label>
-                  <input type="text" name="keterangan" value="Aktif"
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Saldo</label>
+                  <input type="number" name="keterangan" value="50000"
                     class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
@@ -57,8 +57,8 @@
               <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
                 <div class="mb-4">
                   <label for="alamat"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Alamat</label>
-                  <input type="text" name="alamat" value="Jln K H Hasanudin Pekalongan"
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Keterangan</label>
+                  <input type="text" name="keterangan" value="Jajan"
                     class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
