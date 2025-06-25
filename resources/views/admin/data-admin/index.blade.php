@@ -17,7 +17,7 @@
           <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
             <div class="flex items-center justify-between">
               <div>
-                <h6 class="dark:text-white">Data Santri</h6>
+                <h6 class="dark:text-white">Data Admin</h6>
               </div>
               <div>
                 <a href="#" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">

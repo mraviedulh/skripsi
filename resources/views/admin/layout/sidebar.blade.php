@@ -23,7 +23,7 @@
         <div class="items-center block w-auto max-h-screen h-sidenav grow basis-full">
             <ul class="flex flex-col pl-0 mb-0">
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 {{ request()->is('/') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/home">
+                    <a class="py-2.7 {{ request()->is('admin/home') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/home">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-blue-500 ni ni-tv-2"></i>
@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class=" py-2.7 {{ request()->is('data-santri*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/data-santri">
+                    <a class=" py-2.7 {{ request()->is('admin/data-santri*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/data-santri">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-calendar-grid-58"></i>
@@ -43,7 +43,17 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 {{ request()->is('kelola*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/kelola">
+                    <a class=" py-2.7 {{ request()->is('data-admin*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/data-santri">
+                        <div
+                            class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center stroke-0 text-center xl:p-2.5">
+                            <i class="relative top-0 text-sm leading-normal text-orange-500 ni ni-single-02"></i>
+                        </div>
+                        <span class="ml-1 duration-300 opacity-100 pointer-events-none ease">Data Admin</span>
+                    </a>
+                </li>
+
+                <li class="mt-0.5 w-full">
+                    <a class="py-2.7 {{ request()->is('admin/kelola*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/kelola">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
@@ -53,7 +63,7 @@
                 </li>
 
                 <li class="mt-0.5 w-full">
-                    <a class="py-2.7 {{ request()->is('report*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/report">
+                    <a class="py-2.7 {{ request()->is('admin/report*') ? 'bg-blue-500/13 font-semibold' : '' }} dark:text-white dark:opacity-80 text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors" href="/admin/report">
                         <div
                             class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg bg-center fill-current stroke-0 text-center xl:p-2.5">
                             <i class="relative top-0 text-sm leading-normal text-emerald-500 ni ni-credit-card"></i>
