@@ -14,6 +14,8 @@
                     Dashboard
                     @elseif(request()->is('admin/data-santri*'))
                     Data Santri
+                    @elseif(request()->is('admin/data-admin*'))
+                    Data Admin
                     @elseif(request()->is('admin/kelola*'))
                     Kelola Saldo
                     @elseif(request()->is('admin/report*'))
@@ -28,6 +30,8 @@
                 Dashboard
                 @elseif(request()->is('admin/data-santri*'))
                 Data Santri
+                @elseif(request()->is('admin/data-admin*'))
+                Data Admin
                 @elseif(request()->is('admin/kelola'))
                 Kelola Saldo
                 @elseif(request()->is('admin/report'))

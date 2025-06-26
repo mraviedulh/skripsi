@@ -145,14 +145,6 @@
           </div>
         </div>
       </div>
-
-
-
-      <!-- Control buttons -->
-      <button btn-next
-        class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-right active:scale-110 top-6 right-4"></button>
-      <button btn-prev
-        class="absolute z-10 w-10 h-10 p-2 text-lg text-white border-none opacity-50 cursor-pointer hover:opacity-100 far fa-chevron-left active:scale-110 top-6 right-16"></button>
     </div>
   </div>
   </div>

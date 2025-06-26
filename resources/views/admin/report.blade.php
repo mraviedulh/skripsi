@@ -1,459 +1,430 @@
 @include('admin.layout.header')
+
+
+
 @include('admin.layout.sidebar')
 
 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
   <!-- Navbar -->
-  <nav class="relative flex flex-wrap items-center justify-between px-0 py-2 mx-6 transition-all ease-in shadow-none duration-250 rounded-2xl lg:flex-nowrap lg:justify-start" navbar-main navbar-scroll="false">
-    <div class="flex items-center justify-between w-full px-4 py-1 mx-auto flex-wrap-inherit">
-      <nav>
-        <!-- breadcrumb -->
-        <ol class="flex flex-wrap pt-1 mr-12 bg-transparent rounded-lg sm:mr-16">
-          <li class="text-sm leading-normal">
-            <a class="text-white opacity-50" href="javascript:;">Pages</a>
-          </li>
-          <li class="text-sm pl-2 capitalize leading-normal text-white before:float-left before:pr-2 before:text-white before:content-['/']" aria-current="page">Billing</li>
-        </ol>
-        <h6 class="mb-0 font-bold text-white capitalize">Billing</h6>
-      </nav>
-
-      <div class="flex items-center mt-2 grow sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
-        <div class="flex items-center md:ml-auto md:pr-4">
-          <div class="relative flex flex-wrap items-stretch w-full transition-all rounded-lg ease">
-            <span class="text-sm ease leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
-              <i class="fas fa-search"></i>
-            </span>
-            <input type="text" class="pl-9 text-sm focus:shadow-primary-outline ease w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 dark:bg-slate-850 dark:text-white bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none focus:transition-shadow" placeholder="Type here..." />
-          </div>
-        </div>
-        <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
-          <!-- online builder btn  -->
-          <!-- <li class="flex items-center">
-                <a class="inline-block px-8 py-2 mb-0 mr-4 text-xs font-bold text-center text-blue-500 uppercase align-middle transition-all ease-in bg-transparent border border-blue-500 border-solid rounded-lg shadow-none cursor-pointer leading-pro hover:-translate-y-px active:shadow-xs hover:border-blue-500 active:bg-blue-500 active:hover:text-blue-500 hover:text-blue-500 tracking-tight-rem hover:bg-transparent hover:opacity-75 hover:shadow-none active:text-white active:hover:bg-transparent" target="_blank" href="https://www.creative-tim.com/builder/soft-ui?ref=navbar-dashboard&amp;_ga=2.76518741.1192788655.1647724933-1242940210.1644448053">Online Builder</a>
-              </li> -->
-          <li class="flex items-center">
-            <a href="../pages/sign-in.html" class="block px-0 py-2 text-sm font-semibold text-white transition-all ease-nav-brand">
-              <i class="fa fa-user sm:mr-1"></i>
-              <span class="hidden sm:inline">Sign In</span>
-            </a>
-          </li>
-          <li class="flex items-center pl-4 xl:hidden">
-            <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" sidenav-trigger>
-              <div class="w-4.5 overflow-hidden">
-                <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                <i class="ease mb-0.75 relative block h-0.5 rounded-sm bg-white transition-all"></i>
-                <i class="ease relative block h-0.5 rounded-sm bg-white transition-all"></i>
-              </div>
-            </a>
-          </li>
-          <li class="flex items-center px-4">
-            <a href="javascript:;" class="p-0 text-sm text-white transition-all ease-nav-brand">
-              <i fixed-plugin-button-nav class="cursor-pointer fa fa-cog"></i>
-              <!-- fixed-plugin-button-nav  -->
-            </a>
-          </li>
-
-          <!-- notifications -->
-
-          <li class="relative flex items-center pr-2">
-            <p class="hidden transform-dropdown-show"></p>
-            <a href="javascript:;" class="block p-0 text-sm text-white transition-all ease-nav-brand" dropdown-trigger aria-expanded="false">
-              <i class="cursor-pointer fa fa-bell"></i>
-            </a>
-
-            <ul dropdown-menu class="text-sm transform-dropdown before:font-awesome before:leading-default before:duration-350 before:ease lg:shadow-3xl duration-250 min-w-44 before:sm:right-8 before:text-5.5 pointer-events-none absolute right-0 top-0 z-50 origin-top list-none rounded-lg border-0 border-solid border-transparent dark:shadow-dark-xl dark:bg-slate-850 bg-white bg-clip-padding px-2 py-4 text-left text-slate-500 opacity-0 transition-all before:absolute before:right-2 before:left-auto before:top-0 before:z-50 before:inline-block before:font-normal before:text-white before:antialiased before:transition-all before:content-['\f0d8'] sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:mt-2 lg:block lg:cursor-pointer">
-              <!-- add show class on dropdown open js -->
-              <li class="relative mb-2">
-                <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg bg-transparent px-4 duration-300 hover:bg-gray-200 hover:text-slate-700 lg:transition-colors" href="javascript:;">
-                  <div class="flex py-1">
-                    <div class="my-auto">
-                      <img src="../assets/img/team-2.jpg" class="inline-flex items-center justify-center mr-4 text-sm text-white h-9 w-9 max-w-none rounded-xl" />
-                    </div>
-                    <div class="flex flex-col justify-center">
-                      <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New message</span> from Laur</h6>
-                      <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
-                        <i class="mr-1 fa fa-clock"></i>
-                        13 minutes ago
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li class="relative mb-2">
-                <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
-                  <div class="flex py-1">
-                    <div class="my-auto">
-                      <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-4 text-sm text-white bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 h-9 w-9 max-w-none rounded-xl" />
-                    </div>
-                    <div class="flex flex-col justify-center">
-                      <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white"><span class="font-semibold">New album</span> by Travis Scott</h6>
-                      <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
-                        <i class="mr-1 fa fa-clock"></i>
-                        1 day
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-
-              <li class="relative">
-                <a class="dark:hover:bg-slate-900 ease py-1.2 clear-both block w-full whitespace-nowrap rounded-lg px-4 transition-colors duration-300 hover:bg-gray-200 hover:text-slate-700" href="javascript:;">
-                  <div class="flex py-1">
-                    <div class="inline-flex items-center justify-center my-auto mr-4 text-sm text-white transition-all duration-200 ease-nav-brand bg-gradient-to-tl from-slate-600 to-slate-300 h-9 w-9 rounded-xl">
-                      <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                        <title>credit-card</title>
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
-                            <g transform="translate(1716.000000, 291.000000)">
-                              <g transform="translate(453.000000, 454.000000)">
-                                <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z"></path>
-                              </g>
-                            </g>
-                          </g>
-                        </g>
-                      </svg>
-                    </div>
-                    <div class="flex flex-col justify-center">
-                      <h6 class="mb-1 text-sm font-normal leading-normal dark:text-white">Payment successfully completed</h6>
-                      <p class="mb-0 text-xs leading-tight text-slate-400 dark:text-white/80">
-                        <i class="mr-1 fa fa-clock"></i>
-                        2 days
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  @include('admin.layout.navbar')
 
   <div class="w-full px-6 py-6 mx-auto">
-    <!-- content -->
+    <!-- table 1 -->
 
     <div class="flex flex-wrap -mx-3">
-      <div class="max-w-full px-3 lg:w-2/3 lg:flex-none">
-        <div class="flex flex-wrap -mx-3">
-          <div class="w-full max-w-full px-3 mb-6 xl:mb-0 xl:w-1/2 xl:flex-none">
-            <div class="relative flex flex-col min-w-0 break-words bg-transparent border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
-              <div class="relative overflow-hidden rounded-2xl" style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/card-visa.jpg')">
-                <span class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 opacity-80"></span>
-                <div class="relative z-10 flex-auto p-4">
-                  <i class="p-2 text-white fas fa-wifi"></i>
-                  <h5 class="pb-2 mt-6 mb-12 text-white">4562&nbsp;&nbsp;&nbsp;1122&nbsp;&nbsp;&nbsp;4594&nbsp;&nbsp;&nbsp;7852</h5>
-                  <div class="flex">
-                    <div class="flex">
-                      <div class="mr-6">
-                        <p class="mb-0 text-sm leading-normal text-white opacity-80">Card Holder</p>
-                        <h6 class="mb-0 text-white">Jack Peterson</h6>
-                      </div>
-                      <div>
-                        <p class="mb-0 text-sm leading-normal text-white opacity-80">Expires</p>
-                        <h6 class="mb-0 text-white">11/22</h6>
-                      </div>
-                    </div>
-                    <div class="flex items-end justify-end w-1/5 ml-auto">
-                      <img class="w-3/5 mt-2" src="../assets/img/logos/mastercard.png" alt="logo" />
-                    </div>
-                  </div>
-                </div>
+      <div class="flex-none w-full max-w-full px-3">
+        <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+            <div class="flex items-center justify-between">
+              <div>
+                <h6 class="dark:text-white">Data Riwayat Kelola Saldo</h6>
+              </div>
+              <div>
+                <a href="#" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                  <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data
+                </a>
               </div>
             </div>
           </div>
-          <div class="w-full max-w-full px-3 xl:w-1/2 xl:flex-none">
-            <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 md:w-1/2 md:flex-none">
-                <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-                  <div class="p-4 mx-6 mb-0 text-center border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                    <div class="w-16 h-16 text-center bg-center shadow-sm icon bg-gradient-to-tl from-blue-500 to-violet-500 rounded-xl">
-                      <i class="relative text-xl leading-none text-white opacity-100 fas fa-landmark top-31/100"></i>
-                    </div>
-                  </div>
-                  <div class="flex-auto p-4 pt-0 text-center">
-                    <h6 class="mb-0 text-center dark:text-white">Salary</h6>
-                    <span class="text-xs leading-tight dark:text-white dark:opacity-80">Belong Interactive</span>
-                    <hr class="h-px my-4 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
-                    <h5 class="mb-0 dark:text-white">+$2000</h5>
-                  </div>
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 mt-6 md:mt-0 md:w-1/2 md:flex-none">
-                <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-                  <div class="p-4 mx-6 mb-0 text-center border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                    <div class="w-16 h-16 text-center bg-center shadow-sm icon bg-gradient-to-tl from-blue-500 to-violet-500 rounded-xl">
-                      <i class="relative text-xl leading-none text-white opacity-100 fab fa-paypal top-31/100"></i>
-                    </div>
-                  </div>
-                  <div class="flex-auto p-4 pt-0 text-center">
-                    <h6 class="mb-0 text-center dark:text-white">Paypal</h6>
-                    <span class="text-xs leading-tight dark:text-white dark:opacity-80">Freelance Payment</span>
-                    <hr class="h-px my-4 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
-                    <h5 class="mb-0 dark:text-white">$455.00</h5>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="max-w-full px-3 mb-6 lg:mb-0 lg:w-full lg:flex-none">
-            <div class="relative flex flex-col min-w-0 mt-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-              <div class="p-4 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="flex items-center flex-none w-1/2 max-w-full px-3">
-                    <h6 class="mb-0 dark:text-white">Payment Method</h6>
-                  </div>
-                  <div class="flex-none w-1/2 max-w-full px-3 text-right">
-                    <a class="inline-block px-5 py-2.5 font-bold leading-normal text-center text-white align-middle transition-all bg-transparent rounded-lg cursor-pointer text-sm ease-in shadow-md bg-150 bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 hover:shadow-xs active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25" href="javascript:;"> <i class="fas fa-plus"> </i>&nbsp;&nbsp;Add New Card</a>
-                  </div>
-                </div>
-              </div>
-              <div class="flex-auto p-4">
-                <div class="flex flex-wrap -mx-3">
-                  <div class="max-w-full px-3 mb-6 md:mb-0 md:w-1/2 md:flex-none">
-                    <div class="relative flex flex-row items-center flex-auto min-w-0 p-6 break-words bg-transparent border border-solid shadow-none md-max:overflow-auto rounded-xl border-slate-100 dark:border-slate-700 bg-clip-border">
-                      <img class="mb-0 mr-4 w-1/10" src="../assets/img/logos/mastercard.png" alt="logo" />
-                      <h6 class="mb-0 dark:text-white">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;7852</h6>
-                      <i class="ml-auto cursor-pointer fas fa-pencil-alt text-slate-700" data-target="tooltip_trigger" data-placement="top"></i>
-                      <div data-target="tooltip" class="hidden px-2 py-1 text-sm text-white bg-black rounded-lg">
-                        Edit Card
-                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
+          <div class="flex-auto px-0 pt-0 pb-2">
+            <div class="p-0 overflow-x-auto">
+              <table class="items-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+                <thead class="align-bottom">
+                  <tr>
+                    <th class="px-2 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nomor</th>
+                    <th class="px-2 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tanggal</th>
+                    <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama</th>
+                    <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">NIS</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Saldo</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-collapse shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Keterangan</th>
+                    <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-collapse border-solid shadow-none dark:border-white/40 dark:text-white tracking-none whitespace-nowrap text-slate-400 opacity-70"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">1</span>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">23/04/18</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Susanti Rahmawati</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">john@creative-tim.com</p> -->
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="max-w-full px-3 md:w-1/2 md:flex-none">
-                    <div class="relative flex flex-row items-center flex-auto min-w-0 p-6 break-words bg-transparent border border-solid shadow-none md-max:overflow-auto rounded-xl border-slate-100 dark:border-slate-700 bg-clip-border">
-                      <img class="mb-0 mr-4 w-1/10" src="../assets/img/logos/visa.png" alt="logo" />
-                      <h6 class="mb-0 dark:text-white">****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;****&nbsp;&nbsp;&nbsp;5248</h6>
-                      <i class="ml-auto cursor-pointer fas fa-pencil-alt text-slate-700" data-target="tooltip_trigger" data-placement="top"></i>
-                      <div data-target="tooltip" class="hidden px-2 py-1 text-sm text-white bg-black rounded-lg">
-                        Edit Card
-                        <div class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">191234</p>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Aktif</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="/admin/data-santri/edit" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">2</span>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">11/01/19</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Aisyah Nur Kholifah</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">alexa@creative-tim.com</p> -->
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">190023</p>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Lulus</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">3</span>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Aktif</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Khumairaa</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">laurent@creative-tim.com</p> -->
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">198788</p>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">19/09/17</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">4</span>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-emerald-500 to-teal-400 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Aktif</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Siti Nur Janah</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">michael@creative-tim.com</p> -->
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">195391</p>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">24/12/08</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">5</span>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">04/10/21</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Amatullah</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">richard@creative-tim.com</p> -->
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">193914</p>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Lulus</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">6</span>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400">14/09/20</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <div class="flex px-2 py-1">
+                        <div class="flex flex-col justify-center">
+                          <h6 class="mb-0 text-sm leading-normal dark:text-white">Intan Berlian</h6>
+                          <!-- <p class="mb-0 text-xs leading-tight dark:text-white dark:opacity-80 text-slate-400">miriam@creative-tim.com</p> -->
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <p class="mb-0 text-xs font-semibold leading-tight dark:text-white dark:opacity-80">194530</p>
+                    </td>
+                    <td class="p-2 text-sm leading-normal text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <span class="bg-gradient-to-tl from-slate-600 to-slate-300 px-2.5 text-xs rounded-1.8 py-1.4 inline-block whitespace-nowrap text-center align-baseline font-bold uppercase leading-none text-white">Lulus</span>
+                    </td>
+                    <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                      <a href="javascript:;" class="text-xs font-semibold leading-tight dark:text-white dark:opacity-80 text-slate-400"> Edit </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="w-full max-w-full px-3 lg:w-1/3 lg:flex-none">
-        <div class="relative flex flex-col h-full min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-          <div class="p-4 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-            <div class="flex flex-wrap -mx-3">
-              <div class="flex items-center flex-none w-1/2 max-w-full px-3">
-                <h6 class="mb-0 dark:text-white">Invoices</h6>
-              </div>
-              <div class="flex-none w-1/2 max-w-full px-3 text-right">
-                <button class="inline-block px-8 py-2 mb-0 text-xs font-bold leading-normal text-center text-blue-500 align-middle transition-all ease-in bg-transparent border border-blue-500 border-solid rounded-lg shadow-none cursor-pointer bg-150 active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 hover:opacity-75">View All</button>
-              </div>
-            </div>
-          </div>
-          <div class="flex-auto p-4 pb-0">
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-t-inherit text-inherit rounded-xl">
-                <div class="flex flex-col">
-                  <h6 class="mb-1 text-sm font-semibold leading-normal dark:text-white text-slate-700">March, 01, 2020</h6>
-                  <span class="text-xs leading-tight dark:text-white dark:opacity-80">#MS-415646</span>
-                </div>
-                <div class="flex items-center text-sm leading-normal dark:text-white/80">
-                  $180
-                  <button class="dark:text-white inline-block px-0 py-2.5 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-in bg-150 text-sm active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 text-slate-700"><i class="mr-1 text-lg leading-none fas fa-file-pdf"></i> PDF</button>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-xl text-inherit">
-                <div class="flex flex-col">
-                  <h6 class="mb-1 text-sm font-semibold leading-normal dark:text-white text-slate-700">February, 10, 2021</h6>
-                  <span class="text-xs leading-tight dark:text-white dark:opacity-80">#RV-126749</span>
-                </div>
-                <div class="flex items-center text-sm leading-normal dark:text-white/80">
-                  $250
-                  <button class="dark:text-white inline-block px-0 py-2.5 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-in bg-150 text-sm active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 text-slate-700"><i class="mr-1 text-lg leading-none fas fa-file-pdf"></i> PDF</button>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-xl text-inherit">
-                <div class="flex flex-col">
-                  <h6 class="mb-1 text-sm font-semibold leading-normal dark:text-white text-slate-700">April, 05, 2020</h6>
-                  <span class="text-xs leading-tight dark:text-white dark:opacity-80">#FB-212562</span>
-                </div>
-                <div class="flex items-center text-sm leading-normal dark:text-white/80">
-                  $560
-                  <button class="dark:text-white inline-block px-0 py-2.5 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-in bg-150 text-sm active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 text-slate-700"><i class="mr-1 text-lg leading-none fas fa-file-pdf"></i> PDF</button>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-xl text-inherit">
-                <div class="flex flex-col">
-                  <h6 class="mb-1 text-sm font-semibold leading-normal dark:text-white text-slate-700">June, 25, 2019</h6>
-                  <span class="text-xs leading-tight dark:text-white dark:opacity-80">#QW-103578</span>
-                </div>
-                <div class="flex items-center text-sm leading-normal dark:text-white/80">
-                  $120
-                  <button class="dark:text-white inline-block px-0 py-2.5 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-in bg-150 text-sm active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 text-slate-700"><i class="mr-1 text-lg leading-none fas fa-file-pdf"></i> PDF</button>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 border-0 rounded-b-inherit rounded-xl text-inherit">
-                <div class="flex flex-col">
-                  <h6 class="mb-1 text-sm font-semibold leading-normal dark:text-white text-slate-700">March, 01, 2019</h6>
-                  <span class="text-xs leading-tight dark:text-white dark:opacity-80">#AR-803481</span>
-                </div>
-                <div class="flex items-center text-sm leading-normal dark:text-white/80">
-                  $300
-                  <button class="dark:text-white inline-block px-0 py-2.5 mb-0 ml-6 font-bold leading-normal text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer ease-in bg-150 text-sm active:opacity-85 hover:-translate-y-px tracking-tight-rem bg-x-25 text-slate-700"><i class="mr-1 text-lg leading-none fas fa-file-pdf"></i> PDF</button>
-                </div>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-wrap -mx-3">
-      <div class="w-full max-w-full px-3 mt-6 md:w-7/12 md:flex-none">
-        <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-          <div class="p-6 px-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
-            <h6 class="mb-0 dark:text-white">Billing Information</h6>
-          </div>
-          <div class="flex-auto p-4 pt-6">
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative flex p-6 mb-2 border-0 rounded-t-inherit rounded-xl bg-gray-50 dark:bg-slate-850">
-                <div class="flex flex-col">
-                  <h6 class="mb-4 text-sm leading-normal dark:text-white">Oliver Liam</h6>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Company Name: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">Viking Burrito</span></span>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Email Address: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">oliver@burrito.com</span></span>
-                  <span class="text-xs leading-tight dark:text-white/80">VAT Number: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">FRB1235476</span></span>
-                </div>
-                <div class="ml-auto text-right">
-                  <a class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
-                  <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-              <li class="relative flex p-6 mt-4 mb-2 border-0 rounded-xl bg-gray-50 dark:bg-slate-850">
-                <div class="flex flex-col">
-                  <h6 class="mb-4 text-sm leading-normal dark:text-white">Lucas Harper</h6>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Company Name: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">Stone Tech Zone</span></span>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Email Address: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">lucas@stone-tech.com</span></span>
-                  <span class="text-xs leading-tight dark:text-white/80">VAT Number: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">FRB1235476</span></span>
-                </div>
-                <div class="ml-auto text-right">
-                  <a class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
-                  <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-              <li class="relative flex p-6 mt-4 mb-2 border-0 rounded-b-inherit rounded-xl bg-gray-50 dark:bg-slate-850">
-                <div class="flex flex-col">
-                  <h6 class="mb-4 text-sm leading-normal dark:text-white">Ethan James</h6>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Company Name: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">Fiber Notion</span></span>
-                  <span class="mb-2 text-xs leading-tight dark:text-white/80">Email Address: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">ethan@fiber.com</span></span>
-                  <span class="text-xs leading-tight dark:text-white/80">VAT Number: <span class="font-semibold text-slate-700 dark:text-white sm:ml-2">FRB1235476</span></span>
-                </div>
-                <div class="ml-auto text-right">
-                  <a class="relative z-10 inline-block px-4 py-2.5 mb-0 font-bold text-center text-transparent align-middle transition-all border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 bg-gradient-to-tl from-red-600 to-orange-600 hover:-translate-y-px active:opacity-85 bg-x-25 bg-clip-text" href="javascript:;"><i class="mr-2 far fa-trash-alt bg-150 bg-gradient-to-tl from-red-600 to-orange-600 bg-x-25 bg-clip-text"></i>Delete</a>
-                  <a class="inline-block dark:text-white px-4 py-2.5 mb-0 font-bold text-center align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-normal text-sm ease-in bg-150 hover:-translate-y-px active:opacity-85 bg-x-25 text-slate-700" href="javascript:;"><i class="mr-2 fas fa-pencil-alt text-slate-700" aria-hidden="true"></i>Edit</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="w-full max-w-full px-3 mt-6 md:w-5/12 md:flex-none">
-        <div class="relative flex flex-col h-full min-w-0 mb-6 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
-          <div class="p-6 px-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
-            <div class="flex flex-wrap -mx-3">
-              <div class="max-w-full px-3 md:w-1/2 md:flex-none">
-                <h6 class="mb-0 dark:text-white">Your Transactions</h6>
-              </div>
-              <div class="flex items-center justify-end max-w-full px-3 dark:text-white/80 md:w-1/2 md:flex-none">
-                <i class="mr-2 far fa-calendar-alt"></i>
-                <small>23 - 30 March 2020</small>
+    <!-- card 2 -->
+
+    <!-- <div class="flex flex-wrap -mx-3">
+        <div class="flex-none w-full max-w-full px-3">
+          <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+            <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
+              <h6 class="dark:text-white">Projects table</h6>
+            </div>
+            <div class="flex-auto px-0 pt-0 pb-2">
+              <div class="p-0 overflow-x-auto">
+                <table class="items-center justify-center w-full mb-0 align-top border-collapse dark:border-white/40 text-slate-500">
+                  <thead class="align-bottom">
+                    <tr>
+                      <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Project</th>
+                      <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Budget</th>
+                      <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Status</th>
+                      <th class="px-6 py-3 pl-2 font-bold text-center uppercase align-middle bg-transparent border-b shadow-none dark:border-white/40 dark:text-white text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Completion</th>
+                      <th class="px-6 py-3 font-semibold capitalize align-middle bg-transparent border-b border-solid shadow-none dark:border-white/40 dark:text-white tracking-none whitespace-nowrap"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="border-t">
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="spotify" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Spotify</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$2,500</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">working</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">60%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center w-3/5 h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-blue-700 to-cyan-500 whitespace-nowrap" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-invision.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="invision" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Invision</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$5,000</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">done</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">100%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center w-full h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-emerald-500 to-teal-400 whitespace-nowrap" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400" aria-haspopup="true" aria-expanded="false">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-jira.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="jira" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Jira</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$3,400</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">canceled</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">30%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-red-600 to-orange-600 w-3/10 whitespace-nowrap" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="30"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400" aria-haspopup="true" aria-expanded="false">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-slack.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="slack" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Slack</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$1,000</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">canceled</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">0%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center w-0 h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-emerald-500 to-teal-400 whitespace-nowrap" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400" aria-haspopup="true" aria-expanded="false">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-webdev.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="webdev" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Webdev</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$14,000</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">working</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">80%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center w-4/5 h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-blue-700 to-cyan-500 whitespace-nowrap" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b dark:border-white/40 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400" aria-haspopup="true" aria-expanded="false">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                        <div class="flex px-2">
+                          <div>
+                            <img src="../assets/img/small-logos/logo-xd.svg" class="inline-flex items-center justify-center mr-2 text-sm text-white transition-all duration-200 ease-in-out rounded-full h-9 w-9" alt="xd" />
+                          </div>
+                          <div class="my-auto">
+                            <h6 class="mb-0 text-sm leading-normal dark:text-white">Adobe XD</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                        <p class="mb-0 text-sm font-semibold leading-normal dark:text-white dark:opacity-60">$2,300</p>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                        <span class="text-xs font-semibold leading-tight dark:text-white dark:opacity-60">done</span>
+                      </td>
+                      <td class="p-2 text-center align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                        <div class="flex items-center justify-center">
+                          <span class="mr-2 text-xs font-semibold leading-tight dark:text-white dark:opacity-60">100%</span>
+                          <div>
+                            <div class="text-xs h-0.75 w-30 m-0 flex overflow-visible rounded-lg bg-gray-200">
+                              <div class="flex flex-col justify-center w-full h-auto overflow-hidden text-center text-white transition-all bg-blue-500 rounded duration-600 ease bg-gradient-to-tl from-green-600 to-lime-400 whitespace-nowrap" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td class="p-2 align-middle bg-transparent border-b-0 whitespace-nowrap shadow-transparent">
+                        <button class="inline-block px-5 py-2.5 mb-0 font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-normal text-sm ease-in bg-150 tracking-tight-rem bg-x-25 text-slate-400" aria-haspopup="true" aria-expanded="false">
+                          <i class="text-xs leading-tight fa fa-ellipsis-v dark:text-white dark:opacity-60"></i>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
-          <div class="flex-auto p-4 pt-6">
-            <h6 class="mb-4 text-xs font-bold leading-tight uppercase dark:text-white text-slate-500">Newest</h6>
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-t-inherit text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-red-600 border-transparent bg-transparent text-center align-middle font-bold uppercase text-red-600 transition-all hover:opacity-75"><i class="fas fa-arrow-down text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">Netflix</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">27 March 2020, at 12:30 PM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="relative z-10 inline-block m-0 text-sm font-semibold leading-normal text-transparent bg-gradient-to-tl from-red-600 to-orange-600 bg-clip-text">- $ 2,500</p>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 border-t-0 rounded-b-inherit text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-emerald-500 border-transparent bg-transparent text-center align-middle font-bold uppercase text-emerald-500 transition-all hover:opacity-75"><i class="fas fa-arrow-up text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">Apple</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">27 March 2020, at 04:30 AM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="relative z-10 inline-block m-0 text-sm font-semibold leading-normal text-transparent bg-gradient-to-tl from-green-600 to-lime-400 bg-clip-text">+ $ 2,000</p>
-                </div>
-              </li>
-            </ul>
-            <h6 class="my-4 text-xs font-bold leading-tight uppercase dark:text-white text-slate-500">Yesterday</h6>
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 rounded-t-inherit text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-emerald-500 border-transparent bg-transparent text-center align-middle font-bold uppercase text-emerald-500 transition-all hover:opacity-75"><i class="fas fa-arrow-up text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">Stripe</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">26 March 2020, at 13:45 PM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="relative z-10 inline-block m-0 text-sm font-semibold leading-normal text-transparent bg-gradient-to-tl from-green-600 to-lime-400 bg-clip-text">+ $ 750</p>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 border-t-0 text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-emerald-500 border-transparent bg-transparent text-center align-middle font-bold uppercase text-emerald-500 transition-all hover:opacity-75"><i class="fas fa-arrow-up text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">HubSpot</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">26 March 2020, at 12:30 PM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="relative z-10 inline-block m-0 text-sm font-semibold leading-normal text-transparent bg-gradient-to-tl from-green-600 to-lime-400 bg-clip-text">+ $ 1,000</p>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 border-t-0 text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-emerald-500 border-transparent bg-transparent text-center align-middle font-bold uppercase text-emerald-500 transition-all hover:opacity-75"><i class="fas fa-arrow-up text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">Creative Tim</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">26 March 2020, at 08:30 AM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="relative z-10 items-center inline-block m-0 text-sm font-semibold leading-normal text-transparent bg-gradient-to-tl from-green-600 to-lime-400 bg-clip-text">+ $ 2,500</p>
-                </div>
-              </li>
-              <li class="relative flex justify-between px-4 py-2 pl-0 mb-2 border-0 border-t-0 rounded-b-inherit text-inherit rounded-xl">
-                <div class="flex items-center">
-                  <button class="leading-pro ease-in text-xs bg-150 w-6.5 h-6.5 p-1.2 rounded-3.5xl tracking-tight-rem bg-x-25 mr-4 mb-0 flex cursor-pointer items-center justify-center border border-solid border-slate-700 border-transparent bg-transparent text-center align-middle font-bold uppercase text-slate-700 transition-all hover:opacity-75"><i class="fas fa-exclamation text-3xs"></i></button>
-                  <div class="flex flex-col">
-                    <h6 class="mb-1 text-sm leading-normal dark:text-white text-slate-700">Webflow</h6>
-                    <span class="text-xs leading-tight dark:text-white/80">26 March 2020, at 05:00 AM</span>
-                  </div>
-                </div>
-                <div class="flex flex-col items-center justify-center">
-                  <p class="flex items-center m-0 text-sm font-semibold leading-normal text-slate-700">Pending</p>
-                </div>
-              </li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>
-
+      </div> -->
     <footer class="pt-4">
       <div class="w-full px-6 mx-auto">
         <div class="flex flex-wrap items-center -mx-3 lg:justify-between">

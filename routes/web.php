@@ -22,6 +22,12 @@ Route::get('/home', function () {
 Route::get('/admin/data-santri', function () {
     return view('admin.data-santri.index');
 });
+Route::get('/admin/data-admin', function () {
+    return view('admin.data-admin.index');
+});
+Route::get('/admin/data-santri/tambah', function () {
+    return view('admin.data-santri.tambah');
+});
 Route::get('/admin/data-santri/edit', function () {
     return view('admin.data-santri.edit');
 });
