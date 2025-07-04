@@ -13,11 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/admin/home', function () {
-    return view('admin.index');
-});
+// wali santri route
 Route::get('/home', function () {
     return view('santri.index');
+});
+Route::get('/topup', function () {
+    return view('santri.topup.index');
+});
+// admin route
+Route::get('/admin/home', function () {
+    return view('admin.index');
 });
 Route::get('/admin/data-santri', function () {
     return view('admin.data-santri.index');

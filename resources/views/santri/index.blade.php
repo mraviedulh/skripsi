@@ -1,12 +1,8 @@
 @include('santri.layout.header')
-<!-- sidenav  -->
 @include('santri.layout.sidebar')
-<!-- end sidenav -->
 
 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
-  <!-- Navbar -->
   @include('santri.layout.navbar')
-  <!-- end Navbar -->
 
   <!-- cards -->
   <div class="w-full px-6 py-6 mx-auto">
