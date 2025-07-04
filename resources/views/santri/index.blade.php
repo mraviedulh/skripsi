@@ -1,11 +1,11 @@
-@include('layout.header')
+@include('santri.layout.header')
 <!-- sidenav  -->
-@include('layout.sidebar')
+@include('santri.layout.sidebar')
 <!-- end sidenav -->
 
 <main class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68 rounded-xl">
   <!-- Navbar -->
-  @include('layout.navbar')
+  @include('santri.layout.navbar')
   <!-- end Navbar -->
 
   <!-- cards -->
@@ -15,7 +15,7 @@
       <!-- card1 -->
       <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
         <div
-          class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          class="relative flex flex-col min-w-0 h-full break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
           <div class="flex-auto p-4">
             <div class="flex flex-row -mx-3">
               <div class="flex-none w-2/3 max-w-full px-3">
@@ -44,7 +44,7 @@
       <!-- card2 -->
       <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
         <div
-          class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          class="relative flex flex-col min-w-0 h-full break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
           <div class="flex-auto p-4">
             <div class="flex flex-row -mx-3">
               <div class="flex-none w-2/3 max-w-full px-3">
@@ -73,14 +73,12 @@
       <!-- card3 -->
       <div class="w-full max-w-full px-3 mb-6 sm:w-1/2 sm:flex-none xl:mb-0 xl:w-1/4">
         <div
-          class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+          class="relative flex flex-col min-w-0 h-full break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
           <div class="flex-auto p-4">
             <div class="flex flex-row -mx-3">
               <div class="flex-none w-2/3 max-w-full px-3">
                 <div>
-                  <p
-                    class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">
-                    New Clients</p>
+                  <p class="mb-0 font-sans text-sm font-semibold leading-normal uppercase dark:text-white dark:opacity-60">New Clients</p>
                   <h5 class="mb-2 font-bold dark:text-white">+3,462</h5>
                   <p class="mb-0 dark:text-white dark:opacity-60">
                     <span class="text-sm font-bold leading-normal text-red-600">-2%</span>
@@ -101,8 +99,7 @@
 
       <!-- card4 -->
       <div class="w-full max-w-full px-3 sm:w-1/2 sm:flex-none xl:w-1/4">
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+        <div class="relative flex flex-col min-w-0 h-full break-words bg-white shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
           <div class="flex-auto p-4">
             <div class="flex flex-row -mx-3">
               <div class="flex-none w-2/3 max-w-full px-3">
@@ -442,12 +439,12 @@
       </div>
     </div>
 
-    @include('layout.footer')
+    @include('santri.layout.footer')
 
   </div>
   <!-- end cards -->
 </main>
 
-@include('layout.setting')
+@include('santri.layout.setting')
 
-@include('layout.script')
+@include('santri.layout.script')
