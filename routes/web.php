@@ -20,6 +20,9 @@ Route::get('/home', function () {
 Route::get('/topup', function () {
     return view('santri.topup.index');
 });
+Route::get('/topup/history', function () {
+    return view('santri.topup.history');
+});
 // admin route
 Route::get('/admin/home', function () {
     return view('admin.index');
@@ -27,20 +30,23 @@ Route::get('/admin/home', function () {
 Route::get('/admin/data-santri', function () {
     return view('admin.data-santri.index');
 });
-Route::get('/admin/data-admin', function () {
-    return view('admin.data-admin.index');
-});
 Route::get('/admin/data-santri/tambah', function () {
     return view('admin.data-santri.tambah');
 });
 Route::get('/admin/data-santri/edit', function () {
     return view('admin.data-santri.edit');
 });
+Route::get('/admin/data-admin', function () {
+    return view('admin.data-admin.index');
+});
 Route::get('/admin/report', function () {
     return view('admin.report');
 });
 Route::get('/admin/kelola', function () {
     return view('admin.kelola');
+});
+Route::get('/admin/verifikasi', function () {
+    return view('admin.verifikasi.index');
 });
 Route::get('/', function () {
     return view('sign-in');

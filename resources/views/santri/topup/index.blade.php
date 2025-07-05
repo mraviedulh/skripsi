@@ -31,7 +31,16 @@
             <div class="w-full max-w-full px-3 md:w-1/2 md:flex-none">
                 <div class="relative flex flex-col min-w-0 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
                     <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                        <h6 class="dark:text-white">Formulir Konfirmasi Top-Up</h6>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h6 class="dark:text-white">Formulir Konfirmasi Top-Up</h6>
+                            </div>
+                            <div class="ml-auto text-right">
+                                <a href="/topup/history" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                                    Lihat Riwayat
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="flex-auto p-6">
                         <form role="form" action="#" method="POST" enctype="multipart/form-data">
