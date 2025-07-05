@@ -79,32 +79,7 @@
                 </div>
             </div>
         </div>
-
-        <div id="modal-tolak" class="fixed top-0 left-0 z-50 flex items-center justify-center w-full h-full hidden bg-black bg-opacity-100">
-            <div class="w-full max-w-md mx-auto bg-white rounded-lg shadow-lg">
-                <div class="px-6 py-4 border-b">
-                    <h3 class="text-lg font-semibold">Konfirmasi Penolakan</h3>
-                </div>
-                <div class="p-6">
-                    <p class="mb-4 text-sm">Anda akan menolak permintaan top-up ini. Mohon berikan alasan penolakan di bawah ini.</p>
-                    <form id="form-tolak" action="#" method="POST">
-                        {{-- @csrf --}}
-                        {{-- @method('PUT') --}}
-                        <label for="alasan_penolakan" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Alasan Penolakan (Wajib Diisi)</label>
-                        <textarea name="alasan_penolakan" id="alasan_penolakan" rows="4" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" placeholder="Contoh: Bukti transfer tidak valid atau jumlah tidak sesuai." required></textarea>
-                    </form>
-                </div>
-                <div class="flex justify-end px-6 py-4 bg-gray-50 rounded-b-lg">
-                    <button onclick="closeModal()" class="px-4 py-2 mr-3 font-bold text-gray-700 bg-transparent border border-gray-300 rounded-lg hover:bg-gray-100">
-                        Batal
-                    </button>
-                    <button type="submit" form="form-tolak" class="px-4 py-2 font-bold text-white bg-gradient-to-tl from-red-600 to-rose-400 rounded-lg hover:bg-red-600">
-                        Kirim Penolakan
-                    </button>
-                </div>
-            </div>
-        </div>
-        @include('admin.layout.footer')
+        @include('admin.layout.footer-modal')
     </div>
 </main>
 
@@ -120,9 +95,11 @@
         formTolak.action = actionUrl;
 
         modal.classList.remove('hidden');
+        modal.classList.add('flex');
     }
 
     function closeModal() {
         modal.classList.add('hidden');
+        modal.classList.remove('flex');
     }
 </script>
