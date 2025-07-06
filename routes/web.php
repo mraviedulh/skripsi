@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UserManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,15 @@ Route::get('/admin/data-santri/edit', function () {
 Route::get('/admin/data-admin', function () {
     return view('admin.data-admin.index');
 });
+Route::get('/admin/data-user', function () {
+    return view('admin.data-user.index');
+});
+Route::get('/admin/data-user/pilih-role', function () {
+    return view('admin.data-user.pilih-role');
+});
+Route::get('/admin/data-user/tambah', function () {
+    return view('admin.data-user.create');
+});
 Route::get('/admin/report', function () {
     return view('admin.report');
 });
@@ -51,6 +61,15 @@ Route::get('/admin/verifikasi', function () {
 Route::get('/', function () {
     return view('sign-in');
 });
-Route::get('/sign-up', function () {
-    return view('sign-up');
+
+// Grup rute untuk manajemen user agar rapi
+Route::prefix('admin/data-user')->name('admin.data-user.')->group(function () {
+    // Halaman untuk memilih role (Santri atau Admin)
+    Route::get('/pilih-role', [UserManagementController::class, 'selectRole'])->name('selectRole');
+
+    // Halaman form untuk membuat user baru, dengan role yang sudah dipilih
+    Route::get('/tambah', [UserManagementController::class, 'create'])->name('create');
+
+    // Alamat untuk MENYIMPAN data dari form
+    Route::post('/store', [UserManagementController::class, 'store'])->name('store');
 });

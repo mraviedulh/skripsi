@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('saldos', function (Blueprint $table) {
             $table->id();
+            // Ini adalah kunci yang menghubungkan tabel ini ke tabel 'santris'.
+            // onDelete('cascade') artinya jika data santri dihapus, data saldonya juga ikut terhapus.
+            $table->foreignId('santri_id')->constrained('santris')->onDelete('cascade');
+
+            // Kolom untuk menyimpan jumlah saldo, defaultnya adalah 0.
+            $table->decimal('balance', 15, 2)->default(0.00);
+
             $table->timestamps();
         });
     }
