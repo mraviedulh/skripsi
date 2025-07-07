@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DataAdminController;
+use App\Http\Controllers\Admin\DataSantriController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,17 +16,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware('guest')->group(function () {
+    Route::get('/', function () {
+        return redirect('login');
+    });
 });
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/admin/home', function () {
-    return view('admin.index');
-})->name('home.admin');
 
 Route::middleware('auth')->group(function () {
     // wali santri route
@@ -38,22 +39,36 @@ Route::middleware('auth')->group(function () {
         return view('santri.topup.history');
     });
 
-    // admin route
+    // data admin route
+    Route::get('/admin/data-admin', [DataAdminController::class, 'index'])->name('admin.data-admin.index');
+    Route::get('/admin/data-admin/create', [DataAdminController::class, 'create'])->name('admin.data-admin.create');
+    Route::post('/admin/data-admin/create', [DataAdminController::class, 'store'])->name('admin.data-admin.store');
+    Route::get('/admin/data-admin/edit/{id}', [DataAdminController::class, 'edit'])->name('admin.data-admin.edit');
+    Route::post('/admin/data-admin/edit/{id}', [DataAdminController::class, 'update'])->name('admin.data-admin.update');
+
+    // data santri route
+    Route::get('/admin/data-santri', [DataSantriController::class, 'index'])->name('admin.data-santri.index');
+    Route::get('/admin/data-santri/create', [DataSantriController::class, 'create'])->name('admin.data-santri.create');
+    Route::post('/admin/data-santri/create', [DataSantriController::class, 'store'])->name('admin.data-santri.store');
+    Route::get('/admin/data-santri/edit/{id}', [DataSantriController::class, 'edit'])->name('admin.data-santri.edit');
+    Route::post('/admin/data-santri/edit/{id}', [DataSantriController::class, 'update'])->name('admin.data-santri.update');
+
+
     Route::get('/admin/home', function () {
         return view('admin.index');
     })->name('home.admin');
-    Route::get('/admin/data-santri', function () {
-        return view('admin.data-santri.index');
-    });
-    Route::get('/admin/data-santri/tambah', function () {
-        return view('admin.data-santri.tambah');
-    });
-    Route::get('/admin/data-santri/edit', function () {
-        return view('admin.data-santri.edit');
-    });
-    Route::get('/admin/data-admin', function () {
-        return view('admin.data-admin.index');
-    });
+    // Route::get('/admin/data-santri', function () {
+    //     return view('admin.data-santri.index');
+    // });
+    // Route::get('/admin/data-santri/tambah', function () {
+    //     return view('admin.data-santri.tambah');
+    // });
+    // Route::get('/admin/data-santri/edit', function () {
+    //     return view('admin.data-santri.edit');
+    // });
+    // Route::get('/admin/data-admin', function () {
+    //     return view('admin.data-admin.index');
+    // });
     Route::get('/admin/data-user', function () {
         return view('admin.data-user.index');
     });

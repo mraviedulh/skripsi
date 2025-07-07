@@ -17,6 +17,11 @@
               <div>
                 <h6 class="dark:text-white">Data Santri</h6>
               </div>
+              <div>
+                <a href="{{ route('admin.data-santri.create') }}" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                  <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data
+                </a>
+              </div>
             </div>
           </div>
           <div class="flex-auto px-0 pt-0 pb-2">
@@ -48,14 +53,7 @@
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                       {{-- Tombol Edit --}}
-                      <a href="{{ route('data-santri.edit', $santri->id) }}" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a>
-
-                      {{-- Tombol Hapus --}}
-                      <form action="{{ route('data-santri.destroy', $santri->id) }}" method="POST" class="inline ml-4" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data santri ini?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="text-xs font-semibold leading-tight text-red-500"> Hapus </button>
-                      </form>
+                      <a href="{{ route('admin.data-santri.edit', $santri->id) }}" class="text-xs font-semibold leading-tight text-slate-400"> Edit </a>
                     </td>
                   </tr>
                   @empty

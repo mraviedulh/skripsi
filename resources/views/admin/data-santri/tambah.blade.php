@@ -13,93 +13,68 @@
                     <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
                         <div class="flex items-center">
                             <p class="mb-0">Tambah Data Santri</p>
-                            <button type="button"
-                                class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Edit</button>
                         </div>
                     </div>
                     <div class="flex-auto p-6">
                         <p class="leading-normal uppercase text-sm">Detail Santri</p>
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                <div class="mb-4">
-                                    <label for="username"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama</label>
-                                    <input type="text" name="nama" value="Susanti Rahmawati"
-                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                        <form action="{{ route('admin.data-santri.store') }}" method="POST">
+                            @csrf
+                            <div class="flex flex-wrap -mx-3">
+                                <!-- Nama -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama</label>
+                                        <input type="text" name="nama" value="{{ old('nama') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                <div class="mb-4">
-                                    <label for="nis" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
-                                    <input type="number" name="nis" value="191234"
-                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                                </div>
-                            </div>
-                            <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                <div class="mb-4">
-                                    <label for="first name"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Status</label>
-                                    <input type="text" name="status" value="Aktif"
-                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                                </div>
-                            </div>
-                            <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                                <div class="mb-4">
-                                    <label for="saldo"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Saldo</label>
-                                    <input type="number" name="saldo" value="50000"
-                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap -mx-3">
-                            <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
-                                <div class="mb-4">
-                                    <label for="alamat"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Alamat</label>
-                                    <input type="text" name="alamat" value="Jln K H Hasanudin Pekalongan"
-                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                                </div>
-                            </div>
-                            <!-- <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="city"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">City</label>
-                  <input type="text" name="city" value="New York"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="country"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Country</label>
-                  <input type="text" name="country" value="United States"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="postal code"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Postal
-                    code</label>
-                  <input type="text" name="postal code" value="437300"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div> -->
-                        </div>
 
-                        <!-- <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
-                <div class="mb-4">
-                  <label for="about me"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">About
-                    me</label>
-                  <input type="text" name="about me"
-                    value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source."
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-            </div> -->
+                                <!-- NIS -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
+                                        <input type="text" name="nis" value="{{ old('nis') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
+                                </div>
+
+                                <!-- Tanggal Lahir -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Tanggal Lahir</label>
+                                        <input type="date" name="tgl_lahir" value="{{ old('tgl_lahir') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
+                                </div>
+
+                                <!-- No HP Orang Tua -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">No. HP Orang Tua</label>
+                                        <input type="text" name="no_hp_ortu" value="{{ old('no_hp_ortu') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
+                                </div>
+
+                                <!-- Alamat -->
+                                <div class="w-full max-w-full px-3 md:w-full">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Alamat</label>
+                                        <textarea name="alamat"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+                                            rows="3">{{ old('alamat') }}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 text-right">
+                                <button type="submit"
+                                    class="inline-block px-6 py-2 font-bold text-white uppercase transition-all bg-blue-500 rounded-lg shadow-md hover:shadow-lg hover:-translate-y-1 active:opacity-85 text-sm">
+                                    Simpan
+                                </button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
