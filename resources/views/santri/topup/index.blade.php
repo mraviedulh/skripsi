@@ -46,17 +46,17 @@
                         <form role="form" action="#" method="POST" enctype="multipart/form-data">
                             {{-- @csrf --}}
                             <div class="mb-4">
-                                <label for="jumlah_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Jumlah Transfer</label>
-                                <input type="number" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <label for="jumlah_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Jumlah Transfer</label>
+                                <input type="number" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                             </div>
                             <div class="mb-4">
-                                <label for="tanggal_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Tanggal Transfer</label>
-                                <input type="date" id="tanggal_transfer" name="tanggal_transfer" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <label for="tanggal_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Tanggal Transfer</label>
+                                <input type="date" id="tanggal_transfer" name="tanggal_transfer" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                                 <p class="mt-1 text-xs text-gray-500" id="info-tanggal">Info: Hari ini adalah tanggal <span class="font-semibold">{{ date('d F Y') }}</span>.</p>
                             </div>
                             <div class="mb-4">
-                                <label for="bukti_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Upload Bukti Transfer</label>
-                                <input type="file" id="bukti_transfer" name="bukti_transfer" class="focus:shadow-soft-primary-outline dark:bg-gray-950 dark:placeholder:text-white/80 dark:text-white/80 text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <label for="bukti_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Upload Bukti Transfer</label>
+                                <input type="file" id="bukti_transfer" name="bukti_transfer" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                                 <p class="mt-1 text-xs text-gray-500">Hanya format JPG, PNG, atau PDF.</p>
                             </div>
                             <div class="text-center">

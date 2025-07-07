@@ -9,46 +9,46 @@
         <div class="flex flex-wrap -mx-3">
             <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
                 <div
-                    class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                    class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-2xl bg-clip-border">
                     <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
                         <div class="flex items-center">
-                            <p class="mb-0 dark:text-white/80">Tambah Data Santri</p>
+                            <p class="mb-0">Tambah Data Santri</p>
                             <button type="button"
                                 class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Edit</button>
                         </div>
                     </div>
                     <div class="flex-auto p-6">
-                        <p class="leading-normal uppercase dark:text-white dark:opacity-60 text-sm">Detail Santri</p>
+                        <p class="leading-normal uppercase text-sm">Detail Santri</p>
                         <div class="flex flex-wrap -mx-3">
                             <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                 <div class="mb-4">
                                     <label for="username"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Nama</label>
+                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama</label>
                                     <input type="text" name="nama" value="Susanti Rahmawati"
-                                        class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                 </div>
                             </div>
                             <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                 <div class="mb-4">
-                                    <label for="nis" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">NIS</label>
+                                    <label for="nis" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
                                     <input type="number" name="nis" value="191234"
-                                        class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                 </div>
                             </div>
                             <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                 <div class="mb-4">
                                     <label for="first name"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Status</label>
+                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Status</label>
                                     <input type="text" name="status" value="Aktif"
-                                        class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                 </div>
                             </div>
                             <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
                                 <div class="mb-4">
                                     <label for="saldo"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Saldo</label>
+                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Saldo</label>
                                     <input type="number" name="saldo" value="50000"
-                                        class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                 </div>
                             </div>
                         </div>
@@ -56,34 +56,34 @@
                             <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
                                 <div class="mb-4">
                                     <label for="alamat"
-                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Alamat</label>
+                                        class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Alamat</label>
                                     <input type="text" name="alamat" value="Jln K H Hasanudin Pekalongan"
-                                        class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                                        class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                                 </div>
                             </div>
                             <!-- <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
                 <div class="mb-4">
                   <label for="city"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">City</label>
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">City</label>
                   <input type="text" name="city" value="New York"
-                    class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
               <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
                 <div class="mb-4">
                   <label for="country"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Country</label>
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Country</label>
                   <input type="text" name="country" value="United States"
-                    class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
               <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
                 <div class="mb-4">
                   <label for="postal code"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">Postal
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Postal
                     code</label>
                   <input type="text" name="postal code" value="437300"
-                    class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div> -->
                         </div>
@@ -92,11 +92,11 @@
               <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
                 <div class="mb-4">
                   <label for="about me"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700 dark:text-white/80">About
+                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">About
                     me</label>
                   <input type="text" name="about me"
                     value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source."
-                    class="focus:shadow-primary-outline dark:bg-slate-850 dark:text-white text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
                 </div>
               </div>
             </div> -->
@@ -114,7 +114,7 @@
                                 document.write(new Date().getFullYear() + ",");
                             </script>
                             made with <i class="fa fa-heart"></i> by
-                            <a href="https://www.creative-tim.com" class="font-semibold dark:text-white text-slate-700"
+                            <a href="https://www.creative-tim.com" class="font-semibold text-slate-700"
                                 target="_blank">Creative Tim</a>
                             for a better web.
                         </div>
@@ -155,26 +155,26 @@
     </a>
     <!-- -right-90 in loc de 0-->
     <div fixed-plugin-card
-        class="z-sticky backdrop-blur-2xl backdrop-saturate-200 dark:bg-slate-850/80 shadow-3xl w-90 ease -right-90 fixed top-0 left-auto flex h-full min-w-0 flex-col break-words rounded-none border-0 bg-white/80 bg-clip-border px-2.5 duration-200">
+        class="z-sticky backdrop-blur-2xl backdrop-saturate-200 shadow-3xl w-90 ease -right-90 fixed top-0 left-auto flex h-full min-w-0 flex-col break-words rounded-none border-0 bg-white/80 bg-clip-border px-2.5 duration-200">
         <div class="px-6 pt-4 pb-0 mb-0 border-b-0 rounded-t-2xl">
             <div class="float-left">
-                <h5 class="mt-4 mb-0 dark:text-white">Argon Configurator</h5>
-                <p class="dark:text-white dark:opacity-80">See our dashboard options.</p>
+                <h5 class="mt-4 mb-0">Argon Configurator</h5>
+                <p class="dark:text-white">See our dashboard options.</p>
             </div>
             <div class="float-right mt-6">
                 <button fixed-plugin-close-button
-                    class="inline-block p-0 mb-4 font-bold leading-normal text-center uppercase align-middle transition-all ease-in bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:-translate-y-px text-sm tracking-tight-rem bg-150 bg-x-25 active:opacity-85 dark:text-white text-slate-700">
+                    class="inline-block p-0 mb-4 font-bold leading-normal text-center uppercase align-middle transition-all ease-in bg-transparent border-0 rounded-lg shadow-none cursor-pointer hover:-translate-y-px text-sm tracking-tight-rem bg-150 bg-x-25 active:opacity-85 text-slate-700">
                     <i class="fa fa-close"></i>
                 </button>
             </div>
             <!-- End Toggle Button -->
         </div>
         <hr
-            class="h-px mx-0 my-1 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent" />
+            class="h-px mx-0 my-1 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent" />
         <div class="flex-auto p-6 pt-0 overflow-auto sm:pt-4">
             <!-- Sidebar Backgrounds -->
             <div>
-                <h6 class="mb-0 dark:text-white">Sidebar Colors</h6>
+                <h6 class="mb-0">Sidebar Colors</h6>
             </div>
             <a href="javascript:void(0)">
                 <div class="my-2 text-left" sidenav-colors>
@@ -182,7 +182,7 @@
                         class="py-2.2 text-xs rounded-circle h-5.6 mr-1.25 w-5.6 ease-in-out bg-gradient-to-tl from-blue-500 to-violet-500 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-slate-700 text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700"
                         active-color data-color="blue" onclick="sidebarColor(this)"></span>
                     <span
-                        class="py-2.2 text-xs rounded-circle h-5.6 mr-1.25 w-5.6 ease-in-out bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700"
+                        class="py-2.2 text-xs rounded-circle h-5.6 mr-1.25 w-5.6 ease-in-out bg-gradient-to-tl from-zinc-800 to-zinc-700 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700"
                         data-color="gray" onclick="sidebarColor(this)"></span>
                     <span
                         class="py-2.2 text-xs rounded-circle h-5.6 mr-1.25 w-5.6 ease-in-out bg-gradient-to-tl from-blue-700 to-cyan-500 relative inline-block cursor-pointer whitespace-nowrap border border-solid border-white text-center align-baseline font-bold uppercase leading-none text-white transition-all duration-200 hover:border-slate-700"
@@ -200,23 +200,23 @@
             </a>
             <!-- Sidenav Type -->
             <div class="mt-4">
-                <h6 class="mb-0 dark:text-white">Sidenav Type</h6>
-                <p class="leading-normal dark:text-white dark:opacity-80 text-sm">Choose between 2 different sidenav types.
+                <h6 class="mb-0">Sidenav Type</h6>
+                <p class="leading-normal text-sm">Choose between 2 different sidenav types.
                 </p>
             </div>
             <div class="flex">
                 <button transparent-style-btn
-                    class="inline-block w-full px-4 py-2.5 mb-2 font-bold leading-normal text-center text-white capitalize align-middle transition-all bg-blue-500 border border-transparent border-solid rounded-lg cursor-pointer text-sm xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-blue-500 xl-max:to-violet-500 xl-max:text-white xl-max:border-0 hover:-translate-y-px dark:cursor-not-allowed dark:opacity-65 dark:pointer-events-none dark:bg-gradient-to-tl dark:from-blue-500 dark:to-violet-500 dark:text-white dark:border-0 hover:shadow-xs active:opacity-85 ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-blue-500 to-violet-500 hover:border-blue-500"
+                    class="inline-block w-full px-4 py-2.5 mb-2 font-bold leading-normal text-center text-white capitalize align-middle transition-all bg-blue-500 border border-transparent border-solid rounded-lg cursor-pointer text-sm xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-blue-500 xl-max:to-violet-500 xl-max:text-white xl-max:border-0 hover:-translate-y-px hover:shadow-xs active:opacity-85 ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-blue-500 to-violet-500 hover:border-blue-500"
                     data-class="bg-transparent" active-style>White</button>
                 <button white-style-btn
-                    class="inline-block w-full px-4 py-2.5 mb-2 ml-2 font-bold leading-normal text-center text-blue-500 capitalize align-middle transition-all bg-transparent border border-blue-500 border-solid rounded-lg cursor-pointer text-sm xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-blue-500 xl-max:to-violet-500 xl-max:text-white xl-max:border-0 hover:-translate-y-px dark:cursor-not-allowed dark:opacity-65 dark:pointer-events-none dark:bg-gradient-to-tl dark:from-blue-500 dark:to-violet-500 dark:text-white dark:border-0 hover:shadow-xs active:opacity-85 ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-none hover:border-blue-500"
+                    class="inline-block w-full px-4 py-2.5 mb-2 ml-2 font-bold leading-normal text-center text-blue-500 capitalize align-middle transition-all bg-transparent border border-blue-500 border-solid rounded-lg cursor-pointer text-sm xl-max:cursor-not-allowed xl-max:opacity-65 xl-max:pointer-events-none xl-max:bg-gradient-to-tl xl-max:from-blue-500 xl-max:to-violet-500 xl-max:text-white xl-max:border-0 hover:-translate-y-px hover:shadow-xs active:opacity-85 ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 bg-none hover:border-blue-500"
                     data-class="bg-white">Dark</button>
             </div>
-            <p class="block mt-2 leading-normal dark:text-white dark:opacity-80 text-sm xl:hidden">You can change the
+            <p class="block mt-2 leading-normal text-sm xl:hidden">You can change the
                 sidenav type just on desktop view.</p>
             <!-- Navbar Fixed -->
             <div class="flex my-4">
-                <h6 class="mb-0 dark:text-white">Navbar Fixed</h6>
+                <h6 class="mb-0">Navbar Fixed</h6>
                 <div class="block pl-0 ml-auto min-h-6">
                     <input navbarFixed
                         class="rounded-10 duration-250 ease-in-out after:rounded-circle after:shadow-2xl after:duration-250 checked:after:translate-x-5.3 h-5 relative float-left mt-1 ml-auto w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-blue-500/95 checked:bg-blue-500/95 checked:bg-none checked:bg-right"
@@ -224,9 +224,9 @@
                 </div>
             </div>
             <hr
-                class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent dark:bg-gradient-to-r dark:from-transparent dark:via-white dark:to-transparent " />
+                class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-black/40 to-transparent " />
             <div class="flex mt-2 mb-12">
-                <h6 class="mb-0 dark:text-white">Light / Dark</h6>
+                <h6 class="mb-0">Light / Dark</h6>
                 <div class="block pl-0 ml-auto min-h-6">
                     <input dark-toggle
                         class="rounded-10 duration-250 ease-in-out after:rounded-circle after:shadow-2xl after:duration-250 checked:after:translate-x-5.3 h-5 relative float-left mt-1 ml-auto w-10 cursor-pointer appearance-none border border-solid border-gray-200 bg-slate-800/10 bg-none bg-contain bg-left bg-no-repeat align-top transition-all after:absolute after:top-px after:h-4 after:w-4 after:translate-x-px after:bg-white after:content-[''] checked:border-blue-500/95 checked:bg-blue-500/95 checked:bg-none checked:bg-right"
@@ -234,17 +234,17 @@
                 </div>
             </div>
             <a target="_blank"
-                class="dark:border dark:border-solid dark:border-white inline-block w-full px-6 py-2.5 mb-4 font-bold leading-normal text-center text-white align-middle transition-all bg-transparent border border-solid border-transparent rounded-lg cursor-pointer text-sm ease-in hover:shadow-xs hover:-translate-y-px active:opacity-85 tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700 dark:bg-gradient-to-tl dark:from-slate-750 dark:to-gray-850"
+                class="dark:border inline-block w-full px-6 py-2.5 mb-4 font-bold leading-normal text-center text-white align-middle transition-all bg-transparent border border-solid border-transparent rounded-lg cursor-pointer text-sm ease-in hover:shadow-xs hover:-translate-y-px active:opacity-85 tracking-tight-rem shadow-md bg-150 bg-x-25 bg-gradient-to-tl from-zinc-800 to-zinc-700"
                 href="https://www.creative-tim.com/product/argon-dashboard-tailwind">Free Download</a>
             <a target="_blank"
-                class="dark:border dark:border-solid dark:border-white dark:text-white inline-block w-full px-6 py-2.5 mb-4 font-bold leading-normal text-center align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer active:shadow-xs hover:-translate-y-px active:opacity-85 text-sm ease-in tracking-tight-rem bg-150 bg-x-25 border-slate-700 text-slate-700 hover:bg-transparent hover:text-slate-700 hover:shadow-none active:bg-slate-700 active:text-white active:hover:bg-transparent active:hover:text-slate-700 active:hover:shadow-none"
+                class="dark:border inline-block w-full px-6 py-2.5 mb-4 font-bold leading-normal text-center align-middle transition-all bg-transparent border border-solid rounded-lg shadow-none cursor-pointer active:shadow-xs hover:-translate-y-px active:opacity-85 text-sm ease-in tracking-tight-rem bg-150 bg-x-25 border-slate-700 text-slate-700 hover:bg-transparent hover:text-slate-700 hover:shadow-none active:bg-slate-700 active:text-white active:hover:bg-transparent active:hover:text-slate-700 active:hover:shadow-none"
                 href="https://www.creative-tim.com/learning-lab/tailwind/html/quick-start/argon-dashboard/">View
                 documentation</a>
             <div class="w-full text-center">
                 <a class="github-button" href="https://github.com/creativetimofficial/argon-dashboard-tailwind"
                     data-icon="octicon-star" data-size="large" data-show-count="true"
                     aria-label="Star creativetimofficial/argon-dashboard on GitHub">Star</a>
-                <h6 class="mt-4 dark:text-white">Thank you for sharing!</h6>
+                <h6 class="mt-4">Thank you for sharing!</h6>
                 <a href="https://twitter.com/intent/tweet?text=Check%20Argon%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23tailwindcss&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fargon-dashboard-tailwind"
                     class="inline-block px-5 py-2.5 mb-0 mr-2 font-bold text-center text-white align-middle transition-all border-0  rounded-lg cursor-pointer hover:shadow-xs hover:-translate-y-px active:opacity-85 leading-normal text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25 me-2 border-slate-700 bg-slate-700"
                     target="_blank"> <i class="mr-1 fab fa-twitter"></i> Tweet </a>
