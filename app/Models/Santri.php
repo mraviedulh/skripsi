@@ -13,10 +13,12 @@ class Santri extends Model
     /**
      * Setiap santri memiliki satu data user.
      */
+    // Di Santri.php
     public function user()
     {
-        return $this->morphOne(User::class, 'userable');
+        return $this->belongsTo(User::class); // atau with default foreign key
     }
+
 
     /**
      * Setiap santri memiliki satu data saldo.
@@ -24,5 +26,10 @@ class Santri extends Model
     public function saldo()
     {
         return $this->hasOne(Saldo::class);
+    }
+
+    public function transaksis()
+    {
+        return $this->hasMany(Transaksi::class);
     }
 }

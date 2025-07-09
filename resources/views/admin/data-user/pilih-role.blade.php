@@ -15,7 +15,7 @@
                     <div class="flex-auto p-6">
                         <div class="flex flex-wrap -mx-3 text-center">
                             <div class="w-full max-w-full px-3 mb-6 md:w-1/2 md:flex-none">
-                                <a href="{{ route('admin.users.create', ['role' => 'santri']) }}">
+                                <a href="#">
                                     <div class="border-black/12.5 hover:shadow-soft-2xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border p-8">
                                         <div class="mb-4">
                                             <i class="text-5xl ni ni-hat-3 text-blue-500"></i>
@@ -26,7 +26,7 @@
                                 </a>
                             </div>
                             <div class="w-full max-w-full px-3 md:w-1/2 md:flex-none">
-                                <a href="{{ route('admin.users.create', ['role' => 'admin']) }}">
+                                <a href="#">
                                     <div class="border-black/12.5 hover:shadow-soft-2xl relative flex min-w-0 flex-col break-words rounded-2xl border-0 border-solid bg-white bg-clip-border p-8">
                                         <div class="mb-4">
                                             <i class="text-5xl ni ni-badge text-emerald-500"></i>

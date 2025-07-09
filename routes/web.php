@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DataAdminController;
 use App\Http\Controllers\Admin\DataSantriController;
+use App\Http\Controllers\Admin\TransaksiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,7 +54,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/data-santri/edit/{id}', [DataSantriController::class, 'edit'])->name('admin.data-santri.edit');
     Route::post('/admin/data-santri/edit/{id}', [DataSantriController::class, 'update'])->name('admin.data-santri.update');
 
+    // TRANSAKSI: Setor & Tarik
+    Route::post('/admin/transaksi', [TransaksiController::class, 'proses'])->name('admin.transaksi.proses');
 
+    // kelola saldo route
+    Route::get('/admin/kelola', [TransaksiController::class, 'index'])->name('admin.kelola');
+
+    // report
+    Route::get('/admin/report', [TransaksiController::class, 'report'])->name('admin.report');
+
+
+    // home admin route
     Route::get('/admin/home', function () {
         return view('admin.index');
     })->name('home.admin');
@@ -78,12 +89,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/data-user/tambah', function () {
         return view('admin.data-user.create')->name('admin.users.create');
     });
-    Route::get('/admin/report', function () {
-        return view('admin.report');
-    });
-    Route::get('/admin/kelola', function () {
-        return view('admin.kelola');
-    });
+    // Route::get('/admin/report', function () {
+    //     return view('admin.report');
+    // });
+
     Route::get('/admin/verifikasi', function () {
         return view('admin.verifikasi.index');
     });

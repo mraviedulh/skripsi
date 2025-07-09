@@ -1,106 +1,100 @@
 @include('admin.layout.header')
 @include('admin.layout.sidebar')
 
-<div class="relative h-full max-h-screen transition-all duration-200 ease-in-out xl:ml-68">
+<div class="relative h-full transition-all duration-200 ease-in-out xl:ml-68 overflow-visible">
 
   @include('admin.layout.navbar')
   <div class="w-full p-6 mx-auto">
     <div class="flex flex-wrap -mx-3">
       <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
-        <div
-          class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-2xl bg-clip-border">
+        <div class="relative flex flex-col min-w-0 break-words bg-white border-0 shadow-xl rounded-2xl bg-clip-border">
           <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-6 pb-0">
-            <div class="flex items-center">
-              <p class="mb-0">Edit Profile</p>
-              <button type="button"
-                class="inline-block px-8 py-2 mb-4 ml-auto font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Tarik</button>
-              <button type="button"
-                class="inline-block px-8 py-2 mb-4 ml-4 font-bold leading-normal text-center text-white align-middle transition-all ease-in bg-blue-500 border-0 rounded-lg shadow-md cursor-pointer text-xs tracking-tight-rem hover:shadow-xs hover:-translate-y-px active:opacity-85">Setor</button>
+            <div class="flex items-center justify-between">
+              <p class="mb-0 font-bold">Kelola Saldo</p>
             </div>
           </div>
-          <div class="flex-auto p-6">
-            <p class="leading-normal uppercase text-sm">Detail Santri</p>
-            <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="username"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama</label>
-                  <input type="text" name="nama" value="Susanti Rahmawati"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="nis" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
-                  <input type="number" name="nis" value="191234"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="saldo"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Saldo Terkini</label>
-                  <input type="number" name="saldo" value="50000" disabled
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-6/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="first name"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Saldo</label>
-                  <input type="number" name="keterangan" value="50000"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-            </div>
-            <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
-                <div class="mb-4">
-                  <label for="alamat"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Keterangan</label>
-                  <input type="text" name="keterangan" value="Jajan"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <!-- <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="city"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">City</label>
-                  <input type="text" name="city" value="New York"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="country"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Country</label>
-                  <input type="text" name="country" value="United States"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div>
-              <div class="w-full max-w-full px-3 shrink-0 md:w-4/12 md:flex-0">
-                <div class="mb-4">
-                  <label for="postal code"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Postal
-                    code</label>
-                  <input type="text" name="postal code" value="437300"
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
-                </div>
-              </div> -->
-            </div>
 
-            <!-- <div class="flex flex-wrap -mx-3">
-              <div class="w-full max-w-full px-3 shrink-0 md:w-full md:flex-0">
-                <div class="mb-4">
-                  <label for="about me"
-                    class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">About
-                    me</label>
-                  <input type="text" name="about me"
-                    value="A beautiful Dashboard for Bootstrap 5. It is Free and Open Source."
-                    class="focus:shadow-primary-outline text-sm leading-5.6 ease block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-blue-500 focus:outline-none" />
+          <div class="flex-auto p-6 pb-8">
+            {{-- Form cari NIS --}}
+            <form method="GET" action="{{ route('admin.kelola') }}" class="mb-6">
+              <label for="nis" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
+              <div class="flex gap-2">
+                <input type="number" name="nis" placeholder="Masukkan NIS"
+                  class="border px-3 py-2 rounded w-full text-sm"
+                  value="{{ request('nis') }}">
+                <button type="submit"
+                  class="px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-lg hover:shadow-md hover:-translate-y-px transition">Cari</button>
+              </div>
+            </form>
+
+            {{-- Jika santri ditemukan --}}
+            @if(isset($santri))
+            <form method="POST" action="{{ route('admin.transaksi.proses') }}">
+              @csrf
+              <input type="hidden" name="santri_id" value="{{ $santri->id }}">
+
+              <div class="flex flex-wrap -mx-3">
+                <div class="w-full max-w-full px-3 md:w-6/12">
+                  <div class="mb-4">
+                    <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama</label>
+                    <input type="text" value="{{ $santri->nama }}" disabled
+                      class="w-full px-3 py-2 border rounded text-sm bg-gray-100">
+                  </div>
+                </div>
+                <div class="w-full max-w-full px-3 md:w-6/12">
+                  <div class="mb-4">
+                    <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">NIS</label>
+                    <input type="text" value="{{ $santri->nis }}" disabled
+                      class="w-full px-3 py-2 border rounded text-sm bg-gray-100">
+                  </div>
+                </div>
+                <div class="w-full max-w-full px-3 md:w-6/12">
+                  <div class="mb-4">
+                    <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Saldo Terkini</label>
+                    <input type="text" value="Rp {{ number_format($santri->saldo->balance ?? 0, 0, ',', '.') }}" disabled
+                      class="w-full px-3 py-2 border rounded text-sm bg-gray-100">
+                  </div>
+                </div>
+                <div class="w-full max-w-full px-3 md:w-6/12">
+                  <div class="mb-4">
+                    <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nominal</label>
+                    <input type="number" name="nominal" placeholder="Masukkan jumlah"
+                      class="w-full px-3 py-2 border rounded text-sm" required>
+                  </div>
+                </div>
+                <input type="hidden" name="santri_id" value="{{ $santri->id }}">
+                <div class="w-full max-w-full px-3 md:w-full">
+                  <div class="mb-4">
+                    <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Keterangan</label>
+                    <input type="text" name="keterangan" placeholder="Misal: uang jajan"
+                      class="w-full px-3 py-2 border rounded text-sm" required>
+                  </div>
                 </div>
               </div>
-            </div> -->
+
+              <div class="flex justify-end gap-4 mt-6 visible opacity-100 bg-white z-50 relative">
+                <button
+                  type="submit"
+                  name="aksi"
+                  value="tarik"
+                  formaction="{{ route('admin.transaksi.proses') }}"
+                  class="inline-block px-4 py-2 ml-2 text-xs font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-red-600 to-rose-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                  Tarik
+                </button>
+
+                <button
+                  type="submit"
+                  name="aksi"
+                  value="setor"
+                  formaction="{{ route('admin.transaksi.proses') }}"
+                  class="inline-block px-4 py-2 ml-4 text-xs font-bold text-center text-white uppercase align-middle transition-all border-0 rounded-lg cursor-pointer shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-green-600 to-lime-400 hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                  Setor
+                </button>
+              </div>
+            </form>
+            @elseif(request('nis'))
+            <p class="text-red-500 mt-4">Santri dengan NIS {{ request('nis') }} tidak ditemukan.</p>
+            @endif
           </div>
         </div>
       </div>
@@ -108,5 +102,13 @@
     @include('admin.layout.footer')
   </div>
 </div>
+
 @include('admin.layout.setting')
+<!-- <style>
+  button {
+    font-size: 14px !important;
+    color: white !important;
+  }
+</style> -->
+
 @include('admin.layout.script')

@@ -9,4 +9,9 @@ class Admin extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function transaksis()
+    {
+        return $this->hasMany(Transaksi::class);
+    }
 }
