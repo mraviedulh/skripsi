@@ -56,8 +56,17 @@
                                     </div>
                                 </div>
 
+                                <!-- Nama Orang Tua -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nama Orang Tua</label>
+                                        <input type="text" name="nama_wali" value="{{ old('nama_wali') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
+                                </div>
+
                                 <!-- Alamat -->
-                                <div class="w-full max-w-full px-3 md:w-full">
+                                <div class="w-full max-w-full px-3 md:w-6/12">
                                     <div class="mb-4">
                                         <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Alamat</label>
                                         <textarea name="alamat"

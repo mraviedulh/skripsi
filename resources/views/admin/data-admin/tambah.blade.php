@@ -46,6 +46,15 @@
                                             class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
                                     </div>
                                 </div>
+
+                                <!-- No HP -->
+                                <div class="w-full max-w-full px-3 md:w-6/12">
+                                    <div class="mb-4">
+                                        <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">No HP</label>
+                                        <input type="text" name="no_hp" value="{{ old('no_hp') }}"
+                                            class="focus:shadow-primary-outline text-sm leading-5.6 block w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-700 outline-none transition-all placeholder-gray-500 focus:border-blue-500 focus:outline-none" />
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="mt-6 text-right">

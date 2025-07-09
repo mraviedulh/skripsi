@@ -35,6 +35,7 @@ class DataSantriController extends Controller
             'tgl_lahir'   => 'required|date',
             'alamat'      => 'required|string',
             'no_hp_ortu'  => 'nullable|string|max:255',
+            'nama_wali'      => 'required|string',
         ]);
 
         DB::beginTransaction();

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('nip')->unique();
             $table->date('tgl_lahir');
+            $table->string('no_hp')->nullable();
             $table->timestamps();
         });
     }

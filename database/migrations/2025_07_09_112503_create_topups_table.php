@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date('tanggal_transfer');
             $table->string('bukti_transfer');
             $table->enum('status', ['pending', 'disetujui', 'ditolak'])->default('pending');
-            $table->text('alasan_penolakan')->nullable();
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

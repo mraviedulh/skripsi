@@ -34,6 +34,7 @@ class DataAdminController extends Controller
             'nama'      => 'required|string|max:255',
             'nip'       => 'required|string|max:255|unique:admins,nip',
             'tgl_lahir' => 'required|date',
+            'no_hp'  => 'nullable|string|max:255',
         ]);
 
         DB::beginTransaction();

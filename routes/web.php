@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DataAdminController;
 use App\Http\Controllers\Admin\DataSantriController;
+use App\Http\Controllers\Admin\TopUpController;
 use App\Http\Controllers\Admin\TransaksiController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -33,12 +34,20 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', function () {
         return view('santri.index');
     })->name('home.santri');
-    Route::get('/topup', function () {
-        return view('santri.topup.index');
-    });
-    Route::get('/topup/history', function () {
-        return view('santri.topup.history');
-    });
+
+    // Top Up Route
+    Route::get('/santri/topup', [TopUpController::class, 'index'])->name('santri.topup.index');
+    Route::post('/santri/topup', [TopUpController::class, 'store'])->name('santri.topup.store');
+    Route::get('/santri/topup/history', [TopUpController::class, 'riwayatTopup'])->name('santri.topup.history');
+    Route::get('/admin/verifikasi', [TopUpController::class, 'indexAdmin'])->name('admin.verifikasi.index');
+    Route::put('/admin/verifikasi/{topup}/approve', [TopUpController::class, 'approve'])->name('admin.verifikasi.approve');
+    Route::put('/admin/verifikasi/{topup}/reject', [TopUpController::class, 'reject'])->name('admin.verifikasi.reject');
+    // Route::get('/topup', function () {
+    //     return view('santri.topup.index');
+    // });
+    // Route::get('/topup/history', function () {
+    //     return view('santri.topup.history');
+    // });
 
     // data admin route
     Route::get('/admin/data-admin', [DataAdminController::class, 'index'])->name('admin.data-admin.index');
@@ -93,9 +102,9 @@ Route::middleware('auth')->group(function () {
     //     return view('admin.report');
     // });
 
-    Route::get('/admin/verifikasi', function () {
-        return view('admin.verifikasi.index');
-    });
+    // Route::get('/admin/verifikasi', function () {
+    //     return view('admin.verifikasi.index');
+    // });
 });
 
 // Route::middleware('auth')->group(function () {

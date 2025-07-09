@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('tgl_lahir');
             $table->text('alamat');
             $table->string('no_hp_ortu');
+            $table->string('nama_wali')->nullable();
             $table->timestamps();
         });
     }

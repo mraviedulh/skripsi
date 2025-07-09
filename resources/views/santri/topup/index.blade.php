@@ -36,35 +36,50 @@
                                 <h6 class="dark:text-white">Formulir Konfirmasi Top-Up</h6>
                             </div>
                             <div class="ml-auto text-right">
-                                <a href="/topup/history" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
+                                <a href="/santri/topup/history" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
                                     Lihat Riwayat
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="flex-auto p-6">
-                        <form role="form" action="#" method="POST" enctype="multipart/form-data">
-                            {{-- @csrf --}}
+                        @if (session('success'))
+                        <div class="mb-4 rounded-lg bg-green-100 px-4 py-3 text-sm text-green-800 border border-green-300">
+                            {{ session('success') }}
+                        </div>
+                        @endif
+                        <form role="form" action="{{ route('santri.topup.store') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="mb-4">
                                 <label for="jumlah_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Jumlah Transfer</label>
-                                <input type="number" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <input type="number" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                             </div>
+
                             <div class="mb-4">
                                 <label for="tanggal_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Tanggal Transfer</label>
-                                <input type="date" id="tanggal_transfer" name="tanggal_transfer" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <input type="date" id="tanggal_transfer" name="tanggal_transfer" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                                 <p class="mt-1 text-xs text-gray-500" id="info-tanggal">Info: Hari ini adalah tanggal <span class="font-semibold">{{ date('d F Y') }}</span>.</p>
                             </div>
+
                             <div class="mb-4">
                                 <label for="bukti_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Upload Bukti Transfer</label>
-                                <input type="file" id="bukti_transfer" name="bukti_transfer" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding px-3 py-2 font-normal text-gray-700 outline-none transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
-                                <p class="mt-1 text-xs text-gray-500">Hanya format JPG, PNG, atau PDF.</p>
+                                <input type="file" id="bukti_transfer" name="bukti_transfer" accept="image/*" onchange="previewImage(event)" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <p class="mt-1 text-xs text-gray-500">Format gambar: JPG, PNG. Maks 2MB.</p>
+
+                                {{-- Preview Image --}}
+                                <div id="preview-container" class="mt-3 hidden">
+                                    <label class="block text-xs text-slate-700 font-semibold mb-1">Preview:</label>
+                                    <img id="image-preview" class="border border-gray-300 rounded-md" style="max-height: 200px; max-width: 100%; object-fit: contain;" />
+                                </div>
                             </div>
+
                             <div class="text-center">
                                 <button type="submit" class="inline-block w-full px-16 py-3.5 mt-6 mb-0 font-bold leading-normal text-center text-white align-middle transition-all bg-blue-500 border-0 rounded-lg cursor-pointer hover:-translate-y-px active:opacity-85 hover:shadow-xs text-sm ease-in tracking-tight-rem shadow-md bg-150 bg-x-25">
                                     Kirim Konfirmasi
                                 </button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
@@ -76,3 +91,40 @@
 
 @include('santri.layout.setting')
 @include('santri.layout.script')
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+@if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Berhasil!',
+        text: '{{ session("success") }}',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'OK'
+    });
+</script>
+@endif
+
+<script>
+    function previewImage(event) {
+        const input = event.target;
+        const previewContainer = document.getElementById('preview-container');
+        const imagePreview = document.getElementById('image-preview');
+
+        if (input.files && input.files[0]) {
+            if (input.files[0].size > 2 * 1024 * 1024) { // 2MB
+                alert("Ukuran gambar maksimal 2MB.");
+                input.value = "";
+                previewContainer.classList.add('hidden');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                previewContainer.classList.remove('hidden');
+                imagePreview.src = e.target.result;
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>

@@ -24,6 +24,16 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
+    public function santri()
+    {
+        return $this->hasOne(Santri::class);
+    }
+    public function admin()
+    {
+        return $this->hasOne(Admin::class);
+    }
+
+
     /**
      * Relasi ke pendaftaran (jika user adalah santri)
      */
