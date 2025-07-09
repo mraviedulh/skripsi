@@ -25,7 +25,7 @@ class TransaksiController extends Controller
         $request->validate([
             'santri_id' => 'required|exists:santris,id',
             'nominal' => 'required|numeric|min:1000',
-            'aksi' => 'required|in:setor,tarik',
+            'aksi' => 'required|in:tarik,setor',
         ]);
 
         // $santri = Santri::where('nis', $request->nis)->firstOrFail();
@@ -36,13 +36,13 @@ class TransaksiController extends Controller
         $saldo = $santri->saldo ?? $santri->saldo()->create(['balance' => 0]);
 
         // Logika setor atau tarik
-        if ($request->aksi == 'setor') {
-            $saldo->balance += $request->nominal;
-        } elseif ($request->aksi == 'tarik') {
+        if ($request->aksi == 'tarik') {
             if ($saldo->balance < $request->nominal) {
                 return back()->with('error', 'Saldo tidak mencukupi.');
             }
             $saldo->balance -= $request->nominal;
+        } elseif ($request->aksi == 'setor') {
+            $saldo->balance += $request->nominal;
         }
 
         $saldo->save();
@@ -64,53 +64,53 @@ class TransaksiController extends Controller
         return view('admin.kelola', compact('santri'));
     }
 
-    public function setor(Request $request, $id)
-    {
-        $request->validate([
-            'nominal' => 'required|numeric|min:1',
-            'keterangan' => 'nullable|string|max:255',
-        ]);
-
-        $santri = Santri::with('saldo')->findOrFail($id);
-        $santri->saldo->increment('balance', $request->nominal);
-
-        Transaksi::create([
-            'santri_id' => $santri->id,
-            'tipe' => 'setor',
-            'nominal' => $request->nominal,
-            'keterangan' => $request->keterangan,
-        ]);
-
-        return redirect()->route('admin.kelola', $id)->with('success', 'Setor saldo berhasil.');
-    }
-
-    public function tarik(Request $request, $id)
-    {
-        $request->validate([
-            'nominal' => 'required|numeric|min:1',
-            'keterangan' => 'nullable|string|max:255',
-        ]);
-
-        $santri = Santri::with('saldo')->findOrFail($id);
-        if ($santri->saldo->balance < $request->nominal) {
-            return back()->with('error', 'Saldo tidak mencukupi.');
-        }
-
-        $santri->saldo->decrement('balance', $request->nominal);
-
-        Transaksi::create([
-            'santri_id' => $santri->id,
-            'tipe' => 'tarik',
-            'nominal' => $request->nominal,
-            'keterangan' => $request->keterangan,
-        ]);
-
-        return redirect()->route('admin.kelola', $id)->with('success', 'Tarik saldo berhasil.');
-    }
-
     public function report()
     {
         $transaksis = Transaksi::with('santri.user')->latest()->get();
         return view('admin.report', compact('transaksis'));
     }
+
+    // public function setor(Request $request, $id)
+    // {
+    //     $request->validate([
+    //         'nominal' => 'required|numeric|min:1',
+    //         'keterangan' => 'nullable|string|max:255',
+    //     ]);
+
+    //     $santri = Santri::with('saldo')->findOrFail($id);
+    //     $santri->saldo->increment('balance', $request->nominal);
+
+    //     Transaksi::create([
+    //         'santri_id' => $santri->id,
+    //         'tipe' => 'setor',
+    //         'nominal' => $request->nominal,
+    //         'keterangan' => $request->keterangan,
+    //     ]);
+
+    //     return redirect()->route('admin.kelola', $id)->with('success', 'Setor saldo berhasil.');
+    // }
+
+    // public function tarik(Request $request, $id)
+    // {
+    //     $request->validate([
+    //         'nominal' => 'required|numeric|min:1',
+    //         'keterangan' => 'nullable|string|max:255',
+    //     ]);
+
+    //     $santri = Santri::with('saldo')->findOrFail($id);
+    //     if ($santri->saldo->balance < $request->nominal) {
+    //         return back()->with('error', 'Saldo tidak mencukupi.');
+    //     }
+
+    //     $santri->saldo->decrement('balance', $request->nominal);
+
+    //     Transaksi::create([
+    //         'santri_id' => $santri->id,
+    //         'tipe' => 'tarik',
+    //         'nominal' => $request->nominal,
+    //         'keterangan' => $request->keterangan,
+    //     ]);
+
+    //     return redirect()->route('admin.kelola', $id)->with('success', 'Tarik saldo berhasil.');
+    // }
 }

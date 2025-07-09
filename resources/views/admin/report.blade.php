@@ -38,7 +38,7 @@
                     <td class="px-4 py-2 text-sm">{{ $transaksi->santri->nis ?? '-' }}</td>
                     <td class="px-4 py-2 text-sm text-right">Rp {{ number_format($transaksi->nominal, 0, ',', '.') }}</td>
                     <td class="px-4 py-2 text-center text-sm">
-                      <span class="inline-block px-3 py-1 text-xs font-semibold text-white {{ $transaksi->tipe === 'setor' ? 'bg-gradient-to-tl from-green-600 to-lime-400' : 'bg-red-500' }} rounded-full">
+                      <span class="inline-block px-3 py-1 text-xs font-semibold text-white {{ $transaksi->tipe === 'setor' ? 'bg-gradient-to-tl from-green-600 to-lime-400' : 'bg-gradient-to-tl from-red-600 to-rose-400' }} rounded-full">
                         {{ ucfirst($transaksi->tipe) }}
                       </span>
                     </td>
