@@ -43,7 +43,6 @@ class TransaksiController extends Controller
                 return back()->with('error', 'Saldo tidak mencukupi.');
             }
             $saldo->balance -= $request->nominal;
-            $saldo->balance += $request->nominal;
         }
 
         $saldo->save();
