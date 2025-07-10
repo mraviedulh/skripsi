@@ -36,12 +36,13 @@ class TransaksiController extends Controller
         $saldo = $santri->saldo ?? $santri->saldo()->create(['balance' => 0]);
 
         // Logika setor atau tarik
-        if ($request->aksi == 'tarik') {
+        if ($request->aksi == 'setor') {
+            $saldo->balance += $request->nominal;
+        } elseif ($request->aksi == 'tarik') {
             if ($saldo->balance < $request->nominal) {
                 return back()->with('error', 'Saldo tidak mencukupi.');
             }
             $saldo->balance -= $request->nominal;
-        } elseif ($request->aksi == 'setor') {
             $saldo->balance += $request->nominal;
         }
 
