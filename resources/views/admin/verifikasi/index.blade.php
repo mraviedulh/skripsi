@@ -150,4 +150,3 @@
         modal.classList.remove('flex');
     }
 </script>
-@include('admin.layout.setting')

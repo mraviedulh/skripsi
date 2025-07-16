@@ -102,8 +102,6 @@
     @include('admin.layout.footer')
   </div>
 </div>
-
-@include('admin.layout.setting')
 <!-- <style>
   button {
     font-size: 14px !important;

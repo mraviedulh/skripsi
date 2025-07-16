@@ -32,7 +32,7 @@
                   @isset($transaksis)
                   @foreach ($transaksis as $index => $transaksi)
                   <tr class="border-b">
-                    <td class="px-4 py-2 text-center text-xs">{{ $index + 1 }}</td>
+                    <td class="px-4 py-2 text-center text-xs">{{ ($transaksis->currentPage() - 1) * $transaksis->perPage() + $index + 1 }}</td>
                     <td class="px-4 py-2 text-center text-xs">{{ $transaksi->created_at->format('d/m/Y') }}</td>
                     <td class="px-4 py-2 text-sm">{{ $transaksi->santri->user->name ?? '-' }}</td>
                     <td class="px-4 py-2 text-sm">{{ $transaksi->santri->nis ?? '-' }}</td>
@@ -52,6 +52,9 @@
                   @endisset
                 </tbody>
               </table>
+              <div class="px-6 pb-4">
+                {{ $transaksis->links() }}
+              </div>
             </div>
           </div>
 
@@ -62,5 +65,4 @@
   </div>
 </main>
 
-@include('admin.layout.setting')
 @include('admin.layout.script')

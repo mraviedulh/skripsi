@@ -4,6 +4,8 @@ use App\Http\Controllers\Admin\DataAdminController;
 use App\Http\Controllers\Admin\DataSantriController;
 use App\Http\Controllers\Admin\TopUpController;
 use App\Http\Controllers\Admin\TransaksiController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\SaldoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -72,11 +74,20 @@ Route::middleware('auth')->group(function () {
     // report
     Route::get('/admin/report', [TransaksiController::class, 'report'])->name('admin.report');
 
+    // route dashboard
+    Route::get('/admin/home', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+    // Index Saldo
+    Route::get('/admin/data-saldo', [SaldoController::class, 'index'])->name('admin.data-saldo.index');
+
+    // Detail Saldo per Santri
+    Route::get('/admin/data-saldo/{id}', [SaldoController::class, 'show'])->name('admin.data-saldo.show');
+
 
     // home admin route
-    Route::get('/admin/home', function () {
-        return view('admin.index');
-    })->name('home.admin');
+    // Route::get('/admin/home', function () {
+    //     return view('admin.index');
+    // })->name('home.admin');
     // Route::get('/admin/data-santri', function () {
     //     return view('admin.data-santri.index');
     // });

@@ -26,7 +26,7 @@ class RedirectIfAuthenticated
                 if ($user->role_id ===  2) {
                     return redirect()->route('home.santri');
                 } elseif ($user->role_id === 1) {
-                    return redirect()->route('home.admin');
+                    return redirect()->route('admin.dashboard');
                 }
 
                 return redirect('/'); // fallback

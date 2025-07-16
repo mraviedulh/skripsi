@@ -66,7 +66,7 @@ class TransaksiController extends Controller
 
     public function report()
     {
-        $transaksis = Transaksi::with('santri.user')->latest()->get();
+        $transaksis = Transaksi::with('santri.user')->latest()->paginate(10);
         return view('admin.report', compact('transaksis'));
     }
 

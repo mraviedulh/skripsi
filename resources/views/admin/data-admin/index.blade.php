@@ -75,5 +75,5 @@
     @include('admin.layout.footer')
 </main>
 
-@include('admin.layout.setting')
+
 @include('admin.layout.script')
