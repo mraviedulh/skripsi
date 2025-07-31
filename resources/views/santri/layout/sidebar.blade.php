@@ -42,8 +42,8 @@
 
             <!-- Riwayat Kelola Saldo -->
             <li class="mt-0.5 w-full">
-                <a class="py-2.7 {{ request()->is('admin/kelola*') ? 'bg-blue-500/13 font-semibold' : '' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors"
-                    href="/admin/kelola">
+                <a class="py-2.7 {{ request()->is('santri/topup/history*') ? 'bg-blue-500/13 font-semibold' : '' }} text-sm ease-nav-brand my-0 mx-2 flex items-center whitespace-nowrap rounded-lg px-4 text-slate-700 transition-colors"
+                    href="/santri/topup/history">
                     <div class="mr-2 flex h-8 w-8 items-center justify-center rounded-lg xl:p-2.5">
                         <i class="ni ni-archive-2 text-orange-500 text-sm leading-normal"></i>
                     </div>

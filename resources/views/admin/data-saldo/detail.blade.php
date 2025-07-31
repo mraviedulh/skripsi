@@ -38,7 +38,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($dataRiwayat as $i => $trx)
+                  @foreach (array_reverse($dataRiwayat) as $i => $trx)
                   <tr class="border-b">
                     <td class="p-2 text-center">{{ $i + 1 }}</td>
                     <td class="p-2">{{ $trx['tanggal'] }}</td>

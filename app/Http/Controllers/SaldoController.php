@@ -18,7 +18,7 @@ class SaldoController extends Controller
     {
         $santri = Santri::with('transaksis')->findOrFail($id);
 
-        $transaksis = $santri->transaksis->sortByDesc('created_at');
+        $transaksis = $santri->transaksis()->orderBy('created_at')->get();
 
         $dataRiwayat = [];
         $saldoBerjalan = 0;
