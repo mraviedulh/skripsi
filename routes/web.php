@@ -83,6 +83,9 @@ Route::middleware('auth')->group(function () {
     // Detail Saldo per Santri
     Route::get('/admin/data-saldo/{id}', [SaldoController::class, 'show'])->name('admin.data-saldo.show');
 
+    // cetak
+    Route::get('/admin/data-saldo/cetak/{id}', [SaldoController::class, 'cetakRiwayat'])->name('admin.data-saldo.cetak');
+
 
     // home admin route
     // Route::get('/admin/home', function () {
