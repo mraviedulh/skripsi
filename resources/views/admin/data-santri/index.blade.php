@@ -32,7 +32,8 @@
                     <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No</th>
                     <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Santri</th>
                     <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">NIS</th>
-                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Saldo</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Nama Wali</th>
+                    <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">No HP Wali</th>
                     <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Aksi</th>
                   </tr>
                 </thead>
@@ -49,7 +50,10 @@
                       <p class="px-4 mb-0 text-sm font-semibold leading-tight">{{ $santri->nis }}</p>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                      <span class="text-sm font-semibold leading-tight text-slate-700">Rp {{ number_format($santri->saldo->balance ?? 0, 0, ',', '.') }}</span>
+                      <span class="text-sm font-semibold leading-tight text-slate-700"> {{ $santri->nama_wali }}</span>
+                    </td>
+                    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                      <span class="text-sm font-semibold leading-tight text-slate-700"> {{ $santri->no_hp_ortu }}</span>
                     </td>
                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                       {{-- Tombol Edit --}}
