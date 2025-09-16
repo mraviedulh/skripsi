@@ -33,9 +33,7 @@ Route::middleware('guest')->group(function () {
 
 Route::middleware('auth')->group(function () {
     // wali santri route
-    Route::get('/home', function () {
-        return view('santri.index');
-    })->name('home.santri');
+    Route::get('/home', [DashboardController::class, 'dashboard'])->name('home.santri');
 
     // Top Up Route
     Route::get('/santri/topup', [TopUpController::class, 'index'])->name('santri.topup.index');
@@ -86,7 +84,11 @@ Route::middleware('auth')->group(function () {
     // cetak
     Route::get('/admin/data-saldo/cetak/{id}', [SaldoController::class, 'cetakRiwayat'])->name('admin.data-saldo.cetak');
 
+    Route::get('/santri/riwayat', [SaldoController::class, 'riwayat'])->middleware('auth');
 
+    Route::get('/kontak', function () {
+        return view('santri.kontak');
+    });
     // home admin route
     // Route::get('/admin/home', function () {
     //     return view('admin.index');

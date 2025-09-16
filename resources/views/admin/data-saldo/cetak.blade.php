@@ -62,7 +62,7 @@
 
     <div class="ttd">
         TTD<br><br><br>
-        <strong>{{ $admin->nama }}</strong><br>
+        <strong>{{ $admin->name }}</strong><br>
         Admin
     </div>
 </body>

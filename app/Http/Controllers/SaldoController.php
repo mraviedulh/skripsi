@@ -7,6 +7,7 @@ use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class SaldoController extends Controller
@@ -50,7 +51,6 @@ class SaldoController extends Controller
     public function cetakRiwayat($id)
     {
         $santri = Santri::findOrFail($id);
-        // $admin = Admin::findOrFail($id);
         $transaksis = $santri->transaksis()->orderBy('created_at')->get();
 
         $dataRiwayat = [];
@@ -73,10 +73,37 @@ class SaldoController extends Controller
 
         $admin = Auth::user(); // ambil data admin login
 
-        return view('admin.data-saldo.cetak', compact('santri', 'dataRiwayat', 'admin'));
+        // return view('admin.data-saldo.cetak', compact('santri', 'dataRiwayat', 'admin'));
 
         // Jika ingin langsung jadi PDF:
-        // $pdf = Pdf::loadView('admin.data-saldo.cetak', compact('santri', 'dataRiwayat', 'admin'));
-        // return $pdf->download('riwayat_saldo_' . $santri->nis . '.pdf');
+        $pdf = Pdf::loadView('admin.data-saldo.cetak', compact('santri', 'dataRiwayat', 'admin'));
+        return $pdf->stream('riwayat_saldo_' . $santri->nis . '.pdf');
+    }
+
+    public function riwayat()
+    {
+        $user = Auth::user(); // ambil user yang login
+        $santri = $user->santri; // ambil data santri dari user
+        $transaksis = $santri->transaksis()->orderBy('created_at')->get();
+
+        $dataRiwayat = [];
+        $saldoBerjalan = 0;
+
+        foreach ($transaksis as $trx) {
+            if ($trx->tipe === 'setor') {
+                $saldoBerjalan += $trx->nominal;
+            } elseif ($trx->tipe === 'tarik') {
+                $saldoBerjalan -= $trx->nominal;
+            }
+
+            $dataRiwayat[] = [
+                'tanggal' => $trx->created_at->format('d-M-y'),
+                'pemasukan' => $trx->tipe === 'setor' ? $trx->nominal : null,
+                'pengeluaran' => $trx->tipe === 'tarik' ? $trx->nominal : null,
+                'total' => $saldoBerjalan,
+            ];
+        }
+
+        return view('santri.detail', compact('santri', 'dataRiwayat'));
     }
 }

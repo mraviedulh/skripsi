@@ -18,8 +18,8 @@
                             <li class="relative flex p-4 mb-2 border-0 rounded-t-lg rounded-xl bg-gray-50">
                                 <div class="flex flex-col">
                                     <h6 class="mb-1 text-sm leading-normal text-slate-700">Bank Syariah Indonesia (BSI)</h6>
-                                    <span class="text-xs">Nomor Rekening: <span class="font-semibold text-slate-700">7123456789</span></span>
-                                    <span class="text-xs">Atas Nama: <span class="font-semibold text-slate-700">YAYASAN PONDOK PESANTREN KELUANG</span></span>
+                                    <span class="text-xs">Nomor Rekening: <span class="font-semibold text-slate-700">7500750752</span></span>
+                                    <span class="text-xs">Atas Nama: <span class="font-semibold text-slate-700">Yayasan Daar Al Fawwaaz</span></span>
                                 </div>
                             </li>
                         </ul>

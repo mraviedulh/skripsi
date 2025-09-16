@@ -17,11 +17,6 @@
               <div>
                 <h6 class="dark:text-white">Data Santri</h6>
               </div>
-              <div>
-                <a href="{{ route('admin.data-santri.create') }}" class="inline-block px-4 py-2 font-bold text-center text-white uppercase align-middle transition-all rounded-lg cursor-pointer bg-gradient-to-tl from-blue-500 to-violet-500 leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md hover:scale-102 hover:shadow-soft-xs active:opacity-85">
-                  <i class="fas fa-plus"></i>&nbsp;&nbsp;Tambah Data
-                </a>
-              </div>
             </div>
           </div>
           <div class="flex-auto px-0 pt-0 pb-2">
