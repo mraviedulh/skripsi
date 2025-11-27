@@ -59,11 +59,11 @@
                                 {{-- Aksi --}}
                                 <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent text-center">
                                     {{-- Lihat Bukti --}}
-                                    <a href="{{ asset('storage/' . $t->bukti_transfer) }}"
-                                        target="_blank"
-                                        class="text-xs font-semibold text-slate-400">
+                                    <button
+                                        onclick="openBuktiModal('{{ asset('storage/' . $t->bukti_transfer) }}', '{{ $t->bukti_transfer }}')"
+                                        class="text-xs font-semibold text-blue-500 hover:text-blue-700 hover:underline">
                                         Lihat Bukti
-                                    </a>
+                                    </button>
 
                                     {{-- Setujui --}}
                                     <form action="{{ route('admin.verifikasi.approve', $t) }}"
@@ -91,6 +91,30 @@
                             @endforelse
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        {{-- Modal Bukti Transfer --}}
+        <div id="modal-bukti" class="fixed top-0 left-0 items-center justify-center w-full h-full hidden">
+            <div class="w-full h-full bg-black opacity-60 z-10 absolute"></div>
+            <div class="max-w-4xl mx-auto bg-white z-50 rounded-lg shadow-lg">
+                <div class="px-6 py-4 border-b flex justify-between items-center">
+                    <h3 class="text-lg font-semibold">Bukti Transfer</h3>
+                    <button onclick="closeBuktiModal()" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div id="bukti-content" class="text-center">
+                        <!-- Konten akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+                <div class="flex justify-end px-6 py-4 bg-gray-50 rounded-b-lg">
+                    <button onclick="closeBuktiModal()"
+                        class="px-4 py-2 font-bold text-gray-700 bg-transparent border rounded-lg hover:bg-gray-100">
+                        Tutup
+                    </button>
                 </div>
             </div>
         </div>
@@ -138,6 +162,8 @@
 <script>
     const modal = document.getElementById('modal-tolak');
     const formTolak = document.getElementById('form-tolak');
+    const modalBukti = document.getElementById('modal-bukti');
+    const buktiContent = document.getElementById('bukti-content');
 
     function openModal(actionUrl) {
         formTolak.action = actionUrl;
@@ -148,5 +174,42 @@
     function closeModal() {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
+    }
+
+    function openBuktiModal(fileUrl, fileName) {
+        const fileExtension = fileName.split('.').pop().toLowerCase();
+
+        if (fileExtension === 'pdf') {
+            // Tampilkan PDF dalam iframe
+            buktiContent.innerHTML = `
+                <div class="mb-4">
+                    <p class="text-sm text-gray-600 mb-2">File: ${fileName}</p>
+                    <a href="${fileUrl}" target="_blank" class="text-blue-500 hover:text-blue-700 underline">
+                        <i class="fas fa-external-link-alt mr-1"></i>Buka di tab baru
+                    </a>
+                </div>
+                <iframe src="${fileUrl}" width="100%" height="500px" class="border border-gray-300 rounded"></iframe>
+            `;
+        } else {
+            // Tampilkan gambar
+            buktiContent.innerHTML = `
+                <div class="mb-4">
+                    <p class="text-sm text-gray-600 mb-2">File: ${fileName}</p>
+                    <a href="${fileUrl}" target="_blank" class="text-blue-500 hover:text-blue-700 underline">
+                        <i class="fas fa-external-link-alt mr-1"></i>Buka di tab baru
+                    </a>
+                </div>
+                <img src="${fileUrl}" alt="Bukti Transfer" class="max-w-full max-h-96 mx-auto border border-gray-300 rounded" />
+            `;
+        }
+
+        modalBukti.classList.remove('hidden');
+        modalBukti.classList.add('flex');
+    }
+
+    function closeBuktiModal() {
+        modalBukti.classList.add('hidden');
+        modalBukti.classList.remove('flex');
+        buktiContent.innerHTML = '';
     }
 </script>

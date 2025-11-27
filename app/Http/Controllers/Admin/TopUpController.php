@@ -25,7 +25,7 @@ class TopUpController extends Controller
     {
         $santriId = Auth::user()->santri;
         $topups = TopUpModel::where('santri_id', $santriId->id)
-            ->whereIn('status', ['disetujui', 'ditolak'])
+            ->whereIn('status', ['pending', 'disetujui', 'ditolak'])
             ->orderByDesc('created_at')
             ->get();
 
@@ -37,7 +37,7 @@ class TopUpController extends Controller
         $request->validate([
             'jumlah_transfer'   => 'required|numeric|min:1',
             'tanggal_transfer'  => 'required|date',
-            'bukti_transfer'    => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'bukti_transfer'    => 'required|file|mimes:jpg,jpeg,png,pdf|max:2048',
         ]);
 
         // Ambil santri yang sedang login
@@ -73,6 +73,8 @@ class TopUpController extends Controller
     public function approve(TopUpModel $topup)
     {
         DB::transaction(function () use ($topup) {
+            // Ambil entitas Admin dari user login
+            $admin = Admin::where('user_id', Auth::id())->first();
             // Update status top-up
             $topup->update([
                 'status' => 'disetujui',
@@ -93,7 +95,7 @@ class TopUpController extends Controller
             // Simpan riwayat transaksi
             Transaksi::create([
                 'santri_id'  => $topup->santri_id,
-                'admin_id'   => Auth::id(), // Ambil ID admin yang login
+                'admin_id'   => $admin ? $admin->id : null, // simpan admin yang memverifikasi
                 'tipe'       => 'setor',
                 'nominal'    => $topup->jumlah_transfer,
                 'keterangan' => 'Top-up disetujui',

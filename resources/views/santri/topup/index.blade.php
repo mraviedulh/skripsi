@@ -52,7 +52,7 @@
                             @csrf
                             <div class="mb-4">
                                 <label for="jumlah_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Jumlah Transfer</label>
-                                <input type="number" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <input type="text" id="jumlah_transfer" name="jumlah_transfer" placeholder="Contoh: 50000" min="0" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
                             </div>
 
                             <div class="mb-4">
@@ -63,13 +63,18 @@
 
                             <div class="mb-4">
                                 <label for="bukti_transfer" class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Upload Bukti Transfer</label>
-                                <input type="file" id="bukti_transfer" name="bukti_transfer" accept="image/*" onchange="previewImage(event)" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
-                                <p class="mt-1 text-xs text-gray-500">Format gambar: JPG, PNG. Maks 2MB.</p>
+                                <input type="file" id="bukti_transfer" name="bukti_transfer" accept=".jpg,.jpeg,.png,.pdf" onchange="previewFile(event)" class="focus:shadow-soft-primary-outline text-sm leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white px-3 py-2 font-normal text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none" required />
+                                <p class="mt-1 text-xs text-gray-500">Format file: JPG, JPEG, PNG, PDF. Maks 2MB.</p>
 
-                                {{-- Preview Image --}}
+                                {{-- Preview File --}}
                                 <div id="preview-container" class="mt-3 hidden">
                                     <label class="block text-xs text-slate-700 font-semibold mb-1">Preview:</label>
                                     <img id="image-preview" class="border border-gray-300 rounded-md" style="max-height: 200px; max-width: 100%; object-fit: contain;" />
+                                    <div id="pdf-preview" class="border border-gray-300 rounded-md p-4 text-center bg-gray-50 hidden">
+                                        <i class="fas fa-file-pdf text-red-500 text-4xl mb-2"></i>
+                                        <p class="text-sm text-gray-600">File PDF terpilih</p>
+                                        <p id="pdf-filename" class="text-xs text-gray-500 mt-1"></p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -89,42 +94,103 @@
     </div>
 </main>
 
-@include('santri.layout.setting')
 @include('santri.layout.script')
-
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.10.5/dist/autoNumeric.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    const an = new AutoNumeric('#jumlah_transfer', {
+        currencySymbol: 'Rp ',
+        currencySymbolPlacement: 'p', // <- penting, p = prefix (di depan)
+        decimalPlaces: 0,
+        digitGroupSeparator: '.', // gunakan titik untuk ribuan
+        decimalCharacter: ',', // koma untuk desimal (standar Indonesia)
+        unformatOnSubmit: true
+    });
+</script>
 @if(session('success'))
 <script>
     Swal.fire({
         icon: 'success',
         title: 'Berhasil!',
         text: '{{ session("success") }}',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'OK'
+        confirmButtonColor: '#3b82f6',
+        confirmButtonText: 'OK',
+        customClass: {
+            confirmButton: 'swal2-confirm-custom'
+        }
     });
 </script>
+<style>
+    .swal2-confirm-custom {
+        background-color: #3b82f6 !important;
+        border: none !important;
+        border-radius: 8px !important;
+        padding: 12px 24px !important;
+        font-weight: 600 !important;
+        font-size: 16px !important;
+        width: 100% !important;
+        max-width: 120px !important;
+        box-shadow: none !important;
+    }
+
+    .swal2-confirm-custom:hover {
+        background-color: #3b82f6 !important;
+        transform: none !important;
+    }
+
+    .swal2-confirm-custom:focus {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+</style>
 @endif
 
 <script>
-    function previewImage(event) {
+    function previewFile(event) {
         const input = event.target;
         const previewContainer = document.getElementById('preview-container');
         const imagePreview = document.getElementById('image-preview');
+        const pdfPreview = document.getElementById('pdf-preview');
+        const pdfFilename = document.getElementById('pdf-filename');
 
         if (input.files && input.files[0]) {
-            if (input.files[0].size > 2 * 1024 * 1024) { // 2MB
-                alert("Ukuran gambar maksimal 2MB.");
+            const file = input.files[0];
+
+            // Validasi ukuran file
+            if (file.size > 2 * 1024 * 1024) { // 2MB
+                alert("Ukuran file maksimal 2MB.");
                 input.value = "";
                 previewContainer.classList.add('hidden');
                 return;
             }
 
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                previewContainer.classList.remove('hidden');
-                imagePreview.src = e.target.result;
+            // Validasi tipe file
+            const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'application/pdf'];
+            if (!allowedTypes.includes(file.type)) {
+                alert("Format file tidak didukung. Gunakan JPG, JPEG, PNG, atau PDF.");
+                input.value = "";
+                previewContainer.classList.add('hidden');
+                return;
             }
-            reader.readAsDataURL(input.files[0]);
+
+            previewContainer.classList.remove('hidden');
+
+            if (file.type === 'application/pdf') {
+                // Tampilkan preview PDF
+                imagePreview.classList.add('hidden');
+                pdfPreview.classList.remove('hidden');
+                pdfFilename.textContent = file.name;
+            } else {
+                // Tampilkan preview gambar
+                pdfPreview.classList.add('hidden');
+                imagePreview.classList.remove('hidden');
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
         }
     }
 </script>

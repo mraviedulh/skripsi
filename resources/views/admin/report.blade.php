@@ -20,7 +20,8 @@
                 <thead class="bg-slate-100 text-slate-600">
                   <tr>
                     <th class="px-4 py-2 text-xs font-semibold text-center uppercase">#</th>
-                    <th class="px-4 py-2 text-xs font-semibold text-center uppercase">Tanggal</th>
+                    <th class="px-4 py-2 text-xs font-semibold text-center uppercase">Waktu</th>
+                    <th class="px-4 py-2 text-xs font-semibold text-center uppercase">Nama Admin</th>
                     <th class="px-4 py-2 text-xs font-semibold text-left uppercase">Nama Santri</th>
                     <th class="px-4 py-2 text-xs font-semibold text-left uppercase">NIS</th>
                     <th class="px-4 py-2 text-xs font-semibold text-right uppercase">Nominal</th>
@@ -33,7 +34,8 @@
                   @foreach ($transaksis as $index => $transaksi)
                   <tr class="border-b">
                     <td class="px-4 py-2 text-center text-xs">{{ ($transaksis->currentPage() - 1) * $transaksis->perPage() + $index + 1 }}</td>
-                    <td class="px-4 py-2 text-center text-xs">{{ $transaksi->created_at->format('d/m/Y') }}</td>
+                    <td class="px-4 py-2 text-center text-xs">{{ $transaksi->created_at->format('d-M-y H:i:s') }}</td>
+                    <td class="px-4 py-2 text-sm">{{ $transaksi->admin->user->name ?? '-' }}</td>
                     <td class="px-4 py-2 text-sm">{{ $transaksi->santri->user->name ?? '-' }}</td>
                     <td class="px-4 py-2 text-sm">{{ $transaksi->santri->nis ?? '-' }}</td>
                     <td class="px-4 py-2 text-sm text-right">Rp {{ number_format($transaksi->nominal, 0, ',', '.') }}</td>

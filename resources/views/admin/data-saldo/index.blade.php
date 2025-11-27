@@ -15,9 +15,30 @@
           <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
             <div class="flex items-center justify-between">
               <div>
-                <h6 class="dark:text-white">Data Santri</h6>
+                <h6 class="dark:text-white">Data Saldo Santri</h6>
               </div>
             </div>
+          </div>
+
+          {{-- Form Pencarian --}}
+          <div class="p-6 pb-0">
+            <form method="GET" action="{{ route('admin.data-saldo.index') }}" class="mb-4">
+              <div class="flex gap-2">
+                <input type="text" name="search" placeholder="Cari berdasarkan nama atau NIS..."
+                  class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  value="{{ request('search') }}">
+                <button type="submit"
+                  class="px-4 py-2 ml-4 text-sm font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition">
+                  <i class="fas fa-search"></i> Cari
+                </button>
+                @if(request('search'))
+                <a href="{{ route('admin.data-saldo.index') }}"
+                  class="px-4 py-2 text-sm font-bold text-white bg-gray-500 rounded-lg hover:bg-gray-600 transition">
+                  <i class="fas fa-times"></i> Reset
+                </a>
+                @endif
+              </div>
+            </form>
           </div>
           <div class="flex-auto px-0 pt-0 pb-2">
             <div class="p-0 overflow-x-auto">
@@ -60,7 +81,7 @@
               </table>
               {{-- Link Paginasi --}}
               <div class="p-4">
-                {{ $santris->links() }}
+                {{ $santris->appends(request()->query())->links() }}
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ class Transaksi extends Model
 
     protected $guarded = [];
 
-    protected $fillable = ['santri_id', 'tipe', 'nominal', 'keterangan'];
+    protected $fillable = ['santri_id', 'admin_id', 'tipe', 'nominal', 'keterangan'];
 
     /**
      * Relasi: Transaksi milik Santri

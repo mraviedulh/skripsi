@@ -42,11 +42,13 @@
                                             <span class="bg-gradient-to-tl from-green-600 to-lime-400 px-2.5 text-xs rounded-1.8 py-1.4 text-white font-bold uppercase">Berhasil</span>
                                             @elseif($topup->status == 'ditolak')
                                             <span class="bg-gradient-to-tl from-red-600 to-rose-400 px-2.5 text-xs rounded-1.8 py-1.4 text-white font-bold uppercase">Ditolak</span>
+                                            @elseif($topup->status == 'pending')
+                                            <span class="bg-gradient-to-tl from-orange-500 to-yellow-500 px-2.5 text-xs rounded-1.8 py-1.4 text-white font-bold uppercase">Menunggu</span>
                                             @endif
                                         </td>
                                         <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                             <span class="text-xs font-semibold leading-tight text-slate-400">
-                                                {{ $topup->keterangan ?? '-' }}
+                                                {{ $topup->keterangan ?? ($topup->status == 'pending' ? 'Sedang diproses admin' : '-') }}
                                             </span>
                                         </td>
                                     </tr>
@@ -63,5 +65,4 @@
     </div>
 </main>
 
-@include('santri.layout.setting')
 @include('santri.layout.script')

@@ -89,6 +89,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/kontak', function () {
         return view('santri.kontak');
     });
+
+    // Profile routes
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
     // home admin route
     // Route::get('/admin/home', function () {
     //     return view('admin.index');
@@ -123,10 +128,6 @@ Route::middleware('auth')->group(function () {
     // });
 });
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+// Profile routes sudah dipindah ke atas dalam middleware auth
 
 require __DIR__ . '/auth.php';

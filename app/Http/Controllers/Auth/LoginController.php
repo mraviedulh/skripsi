@@ -37,6 +37,8 @@ class LoginController extends Controller
                 return redirect()->intended('/admin/index');
             } elseif ($user->role_id == 2) { // Asumsi 2 = Santri
                 return redirect()->intended('/santri/index');
+            } elseif ($user->role_id == 3) { // Asumsi 3 = Koor
+                return redirect()->intended('/koor/index');
             }
 
             // Default redirect jika role tidak dikenali

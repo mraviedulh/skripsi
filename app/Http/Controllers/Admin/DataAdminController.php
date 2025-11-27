@@ -11,10 +11,19 @@ use Illuminate\Support\Facades\Hash;
 
 class DataAdminController extends Controller
 {
-    // Tampilkan semua data santri
-    public function index()
+    // Tampilkan semua data admin
+    public function index(Request $request)
     {
         $query = Admin::query();
+
+        // Tambahkan fitur pencarian berdasarkan nama atau NIP
+        if ($request->has('search') && $request->search) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', '%' . $search . '%')
+                    ->orWhere('nip', 'like', '%' . $search . '%');
+            });
+        }
 
         $admins = $query->latest()->paginate(10);
 

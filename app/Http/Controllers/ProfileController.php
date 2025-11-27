@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\Santri;
 
 class ProfileController extends Controller
 {
@@ -16,25 +17,58 @@ class ProfileController extends Controller
      */
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
-            'user' => $request->user(),
+        $user = $request->user();
+        $santri = null;
+
+        // Jika user adalah santri, ambil data santri
+        if ($user->role_id == 2) {
+            $santri = Santri::where('user_id', $user->id)->first();
+        }
+
+        return view('santri.profil', [
+            'user' => $user,
+            'santri' => $santri,
         ]);
     }
 
     /**
      * Update the user's profile information.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        // Jika user adalah santri, update data santri
+        if ($user->role_id == 2) {
+            $validated = $request->validate([
+                'alamat'      => 'required|string',
+                'no_hp_ortu'  => 'nullable|string|max:255',
+                'nama_wali'   => 'required|string',
+            ]);
+
+            $santri = Santri::where('user_id', $user->id)->first();
+            if ($santri) {
+                $santri->update($validated);
+            }
+
+            return Redirect::route('profile.edit')->with('success', 'Profile berhasil diperbarui.');
+        } else {
+            // Update data user biasa
+            $validated = $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            ]);
+
+            $user->fill($validated);
+
+            if ($user->isDirty('email')) {
+                $user->email_verified_at = null;
+            }
+
+            $user->save();
+
+            return Redirect::route('profile.edit')->with('status', 'profile-updated');
         }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
     }
 
     /**

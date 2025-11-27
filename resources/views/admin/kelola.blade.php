@@ -58,8 +58,12 @@
                 <div class="w-full max-w-full px-3 md:w-6/12">
                   <div class="mb-4">
                     <label class="inline-block mb-2 ml-1 font-bold text-xs text-slate-700">Nominal</label>
-                    <input type="number" name="nominal" placeholder="Masukkan jumlah"
+                    <!-- <input type="number" name="nominal" placeholder="Masukkan jumlah" min="0" step="1000"
+                      class="w-full px-3 py-2 border rounded text-sm" required> -->
+                    <input type="text" id="nominal" name="nominal" placeholder="Masukkan jumlah nominal"
                       class="w-full px-3 py-2 border rounded text-sm" required>
+
+                    <!-- <input type="hidden" name="nominal" id="nominal_value"> -->
                   </div>
                 </div>
                 <input type="hidden" name="santri_id" value="{{ $santri->id }}">
@@ -110,3 +114,42 @@
 </style> -->
 
 @include('admin.layout.script')
+<!-- <script>
+  // Ambil elemen input
+  const nominalDisplay = document.getElementById('nominal_display');
+  const nominalValue = document.getElementById('nominal_value');
+
+  // Tambahkan event listener untuk 'keyup'
+  nominalDisplay.addEventListener('keyup', function() {
+    // 1. Ambil nilai dari input dan hapus semua karakter selain angka
+    let cleanValue = this.value.replace(/[^0-9]/g, '');
+
+    // 2. Update nilai input tersembunyi dengan angka bersih
+    nominalValue.value = cleanValue;
+
+    // 3. Format angka dengan pemisah ribuan (titik) dan tambahkan "Rp "
+    if (cleanValue) {
+      // Gunakan Intl.NumberFormat untuk memformat angka ke format lokal Indonesia
+      let formattedValue = new Intl.NumberFormat('id-ID').format(cleanValue);
+      this.value = 'Rp ' + formattedValue;
+    } else {
+      this.value = '';
+    }
+  });
+</script> -->
+<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.10.5/dist/autoNumeric.min.js"></script>
+<script>
+  const an = new AutoNumeric('#nominal', {
+    currencySymbol: 'Rp ',
+    currencySymbolPlacement: 'p', // <- penting, p = prefix (di depan)
+    decimalPlaces: 0,
+    digitGroupSeparator: '.', // gunakan titik untuk ribuan
+    decimalCharacter: ',', // koma untuk desimal (standar Indonesia)
+    unformatOnSubmit: false,
+  });
+
+  // // Ambil nilai angka murni
+  // document.querySelector('form').addEventListener('submit', function() {
+  //   document.getElementById('nominal_value').value = an.getNumber();
+  // });
+</script>

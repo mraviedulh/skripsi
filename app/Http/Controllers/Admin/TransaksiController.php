@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Santri;
 use App\Models\Transaksi;
+use App\Models\Admin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class TransaksiController extends Controller
@@ -12,7 +14,6 @@ class TransaksiController extends Controller
     public function index(Request $request)
     {
         $santri = null;
-
         if ($request->has('nis')) {
             $santri = Santri::where('nis', $request->nis)->first();
         }
@@ -22,35 +23,42 @@ class TransaksiController extends Controller
 
     public function proses(Request $request)
     {
+        $nominalFormat = $request->input('nominal');
+
+        $nominalNumeric = (int) preg_replace('/[^0-9]/', '', $nominalFormat);
+
         $request->validate([
             'santri_id' => 'required|exists:santris,id',
-            'nominal' => 'required|numeric|min:1000',
+            // 'nominal' => 'required|numeric|min:1000',
             'aksi' => 'required|in:tarik,setor',
         ]);
 
         // $santri = Santri::where('nis', $request->nis)->firstOrFail();
         $santri = Santri::findOrFail($request->santri_id);
-
+        // Ambil entitas Admin berdasarkan user yang login
+        $admin = Admin::where('user_id', Auth::id())->first();
 
         // Ambil atau buat saldo jika belum ada
         $saldo = $santri->saldo ?? $santri->saldo()->create(['balance' => 0]);
 
         // Logika setor atau tarik
         if ($request->aksi == 'setor') {
-            $saldo->balance += $request->nominal;
+            $saldo->balance += $nominalNumeric;
         } elseif ($request->aksi == 'tarik') {
-            if ($saldo->balance < $request->nominal) {
+            if ($saldo->balance < $nominalNumeric) {
                 return back()->with('error', 'Saldo tidak mencukupi.');
+            } elseif ($nominalNumeric > 500000) {
+                return back()->with('error', 'Nominal tidak boleh lebih dari 500.000.');
             }
-            $saldo->balance -= $request->nominal;
+            $saldo->balance -= $nominalNumeric;
         }
 
         $saldo->save();
 
         // Simpan log transaksi
         $santri->transaksis()->create([
-            'user_id' => auth()->id(), // Ini optional jika relasi transaksinya dengan user
-            'nominal' => $request->nominal,
+            'admin_id' => $admin->id, // Ini optional jika relasi transaksinya dengan user
+            'nominal' => $nominalNumeric,
             'tipe' => $request->aksi,
             'keterangan' => $request->keterangan,
         ]);

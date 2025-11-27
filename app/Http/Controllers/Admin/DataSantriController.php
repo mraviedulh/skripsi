@@ -11,9 +11,18 @@ use Illuminate\Support\Facades\Hash;
 class DataSantriController extends Controller
 {
     // Tampilkan semua data santri
-    public function index()
+    public function index(Request $request)
     {
         $query = Santri::query();
+
+        // Tambahkan fitur pencarian berdasarkan nama atau NIS
+        if ($request->has('search') && $request->search) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', '%' . $search . '%')
+                    ->orWhere('nis', 'like', '%' . $search . '%');
+            });
+        }
 
         $santris = $query->latest()->paginate(10);
 
@@ -116,8 +125,14 @@ class DataSantriController extends Controller
         $santri = Santri::findOrFail($id);
 
         $validated = $request->validate([
+            'nama'        => 'required|string|max:255',
+            'nis'         => 'required|string|max:255|unique:santris,nis',
+            'tgl_lahir'   => 'required|date',
             'alamat'      => 'required|string',
             'no_hp_ortu'  => 'nullable|string|max:255',
+            'nama_wali'      => 'required|string',
+            // 'alamat'      => 'required|string',
+            // 'no_hp_ortu'  => 'nullable|string|max:255',
         ]);
 
         $santri->update($validated);

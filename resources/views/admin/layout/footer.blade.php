@@ -8,7 +8,7 @@
                         document.write(new Date().getFullYear() + ",");
                     </script>
                     made by
-                    <p class="font-semibold text-slate-700">PPTQ Al Fawwaaz</p>
+                    <p class="font-semibold inline-flex text-slate-700">PPTQ Al Fawwaaz</p>
                 </div>
             </div>
             <div class="w-full max-w-full px-3 mt-0 shrink-0 lg:w-1/2 lg:flex-none">

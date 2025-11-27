@@ -12,9 +12,20 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 class SaldoController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $santris = Santri::with('saldo')->paginate(10); // Asumsikan relasi saldo sudah ada
+        $query = Santri::with('saldo');
+
+        // Tambahkan fitur pencarian berdasarkan nama atau NIS
+        if ($request->has('search') && $request->search) {
+            $search = $request->search;
+            $query->where(function ($q) use ($search) {
+                $q->where('nama', 'like', '%' . $search . '%')
+                    ->orWhere('nis', 'like', '%' . $search . '%');
+            });
+        }
+
+        $santris = $query->paginate(10);
         return view('admin.data-saldo.index', compact('santris'));
     }
 
@@ -35,7 +46,7 @@ class SaldoController extends Controller
             }
 
             $dataRiwayat[] = [
-                'tanggal' => $trx->created_at->format('d-M-y'),
+                'tanggal' => $trx->created_at->format('d-M-y H:i:s'),
                 'pemasukan' => $trx->tipe === 'setor' ? $trx->nominal : null,
                 'pengeluaran' => $trx->tipe === 'tarik' ? $trx->nominal : null,
                 'total' => $saldoBerjalan,
@@ -64,7 +75,7 @@ class SaldoController extends Controller
             }
 
             $dataRiwayat[] = [
-                'tanggal' => $trx->created_at->format('d-M-y'),
+                'tanggal' => $trx->created_at->format('d-M-y H:i:s'),
                 'pemasukan' => $trx->tipe === 'setor' ? $trx->nominal : null,
                 'pengeluaran' => $trx->tipe === 'tarik' ? $trx->nominal : null,
                 'total' => $saldoBerjalan,
@@ -97,7 +108,7 @@ class SaldoController extends Controller
             }
 
             $dataRiwayat[] = [
-                'tanggal' => $trx->created_at->format('d-M-y'),
+                'tanggal' => $trx->created_at->format('d-M-y H:i:s'),
                 'pemasukan' => $trx->tipe === 'setor' ? $trx->nominal : null,
                 'pengeluaran' => $trx->tipe === 'tarik' ? $trx->nominal : null,
                 'total' => $saldoBerjalan,
